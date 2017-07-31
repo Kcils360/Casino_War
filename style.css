@@ -6,9 +6,7 @@ html{
 background-image: url(img/greenFelt.jpg);
 
 }
-/*body{
-  background-color: brown;
-}*/
+
 h1{
   background-color: gold;
   text-align: center;
@@ -28,8 +26,6 @@ section{
 }
 #dealer_img{
   display: block;
-  margin: 0 auto;
-  margin-top: 30px;
   height: 240px;
   width: 170px;
 }
@@ -40,6 +36,47 @@ section{
   height: 240px;
   width: 170px;
 }
+#card_back{
+  display: block;
+  margin-top: 50px;
+  height: 250px;
+  width: 180px;
+
+}
 form{
   width: 250px;
+}
+
+/*/------card flip--------------*/
+
+.flip_container{
+  width: 180px;
+  height: 250px;
+  margin: 0 auto;
+}
+.flip_container:hover .flip{
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.flip {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+}
+.flip_front, .flip_back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+       top: 0;
+      left: 0;
+}
+.flip_front {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+.flip_back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
