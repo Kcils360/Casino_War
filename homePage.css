@@ -3,9 +3,9 @@
   src: url("fonts/CoffeeTin Initials.ttf");
 }
 
-* {
+/** {
   border: 2px dotted #C71119;
-}
+}*/
 
 html {
   background-image: url(img/greenFelt.jpg);
@@ -61,14 +61,41 @@ input {
   color: #180B05;
 }
 
+.bet {
+  font-size: 40px;
+}
+
+.bet ul {
+  list-style: none;
+}
+
+.bet li {
+  display: inline;
+}
+
+.bet input {
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  width: 75px;
+  background-color: #E6FFB0;
+  color: #180B05;
+}
+
 footer {
   position: relative;
 }
 
 #play {
-  width: 160px;
-  height: 40px;
+  width: 350px;
+  height: 60px;
   position: relative;
-  margin-left: calc(50% - 80px);
-  margin-bottom: 40px;
+  margin-left: calc(50% - 175px);
+  margin-top: 80px;
+  background-color: #180B05;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: lighter;
+  font-size: 45px;
+  color: #B14B00;
+  border-radius: 30px;
+  border-color: #9A0000;
 }
