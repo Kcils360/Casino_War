@@ -69,7 +69,7 @@ form{
           transform-style: preserve-3d;
   position: relative;
 }
-.flip_front, .flip_back {
+.flip_front {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   position: absolute;
@@ -78,9 +78,9 @@ form{
 }
 .flip_front {
   -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
+          transform: rotateY(0deg);*/
 }
-.flip_back {
+/*.flip_back {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
-}
+}*/
