@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "CoffeeTin";
+  src: url("fonts/CoffeeTin Initials.ttf");
+}
+
+* {
+  border: 2px dotted #C71119;
+}
+
+html {
+  background-image: url(img/greenFelt.jpg);
+}
+
+body {
+  width: 95%;
+  height: auto;
+  margin: 0px auto;
+}
+
+.title {
+  border: 2px solid #9A0000;
+  border-radius: 60px;
+  margin: 80px 17% 40px 17%;
+  text-align: center;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: lighter;
+  font-size: 120px;
+  color: #B14B00;
+  background-color: #180B05;
+
+}
+
+section {
+  text-align: center;
+
+}
+
+div {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0px 4%;
+  color: #180B05;
+  font-size: 25px;
+}
