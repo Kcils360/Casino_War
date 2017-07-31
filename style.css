@@ -26,8 +26,11 @@ section{
 }
 #dealer_img{
   display: block;
+  margin: 0 auto;
+  margin-top: 50px;
   height: 240px;
   width: 170px;
+
 }
 #player_img{
   display: block;
@@ -38,9 +41,10 @@ section{
 }
 #card_back{
   display: block;
-  margin-top: 50px;
-  height: 250px;
-  width: 180px;
+  margin: 0 auto;
+  margin-left: 5px;
+  height: 255px;
+  width: 185px;
 
 }
 form{
@@ -50,8 +54,8 @@ form{
 /*/------card flip--------------*/
 
 .flip_container{
-  width: 180px;
-  height: 250px;
+  width: 190px;
+  height: 260px;
   margin: 0 auto;
 }
 .flip_container:hover .flip{
