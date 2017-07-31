@@ -6,17 +6,17 @@ Card.color = ['clubs','hearts','spades','diamonds'];
 Card.left = 52;
 Player.info = [];
 Player.bid = 0;
-Player.bank = 100;
+Player.bank = 200;
 var dealerHand;
 var playerHand;
 var randomIndex;
 
-Card.dealerImg = document.getElementById('dealer');
-Card.playerImg = document.getElementById('player');
+Card.dealerImg = document.getElementById('dealer_img');
+Card.playerImg = document.getElementById('player_img');
 Card.war = document.getElementById('war');
 Card.section = document.getElementById('imgSection');
 Card.input = document.getElementById('form');
-Player.bankLeft = document.getElementById('bank').innerHTML;
+document.getElementById('bank').innerHTML = Player.bank;
 new Player('testbot');
 
 
@@ -74,6 +74,8 @@ function play(e){
 
   Player.bid = 0;
   updatePlayer();
+  document.getElementById('bank').innerHTML = Player.bank;
+
 
   if(Player.bank <= 0){
     alert('GAME OVER !!');
@@ -117,4 +119,6 @@ function updatePlayer(){
 }
 
 
+
 Card.input.addEventListener('submit',play);
+// document.getElementById('restart').addEventListener('submit',restart);
