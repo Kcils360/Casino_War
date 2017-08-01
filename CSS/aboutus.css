@@ -10,17 +10,29 @@ html {
 }
 
 nav{
-  background-color: #B14B00;
+  background-color: #180B05;
   border: 2px solid #9A0000;
-  border-radius: 10px;
-  width: 50%;
-  margin: 0 auto;
+  border-radius: 25px;
+  width: 400px;
+  position: fixed;
+  margin-top: 30px;
+  margin-left: 73%;
 }
-a{
-  margin-left: 90px;
-}
-#title{
 
+a {
+  padding-left: 19%;
+  font-size: 25px;
+  font-family: 'Limelight', cursive;
+  color: #E6FFB0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #B14B00;
+}
+
+
+#title{
   text-align: center;
   color: #B14B00;
   font-family: 'CoffeeTin', sans-serif;
@@ -29,6 +41,7 @@ a{
   border-radius: 60px;
   border: 2px solid #9A0000;
   font-weight: lighter;
+  margin-bottom: 10px;
 }
 .person{
   font-weight: lighter;
@@ -101,5 +114,6 @@ div{
 /* back, initially hidden pane */
 .back{
   transform: rotateY(180deg);
-  background-color: black;
+  color: #E6FFB0;
+  background-color: #180B05;
 }
