@@ -1,9 +1,23 @@
+@font-face {
+  font-family: "CoffeeTin";
+  src: url("../fonts/CoffeeTin Initials.ttf");
+}
+
 html {
   background-image: url(../img/greenFelt.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 nav{
   background-color: #B14B00;
+  border: 2px solid #9A0000;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+a{
+  margin-left: 90px;
 }
 #title{
 
@@ -14,10 +28,16 @@ nav{
   font-size: 90px;
   border-radius: 60px;
   border: 2px solid #9A0000;
+  font-weight: lighter;
 }
 .person{
+  font-weight: lighter;
+  font-family: 'CoffeeTin', sans-serif;
   font-size: 60px;
   color: #9A0000;
+  background-color: #180B05;
+  border-radius: 60px;
+  border: 2px solid #B14B00
 }
 p{
   color: white;
@@ -27,8 +47,8 @@ p{
 img{
   display: block;
   margin: auto;
-  height: 240px;
-  width: 170px;
+  height: 400px;
+  width: 400px;
 }
 section{
   width: 40%;
@@ -46,4 +66,40 @@ section{
 }
 div{
   text-align: center;
+}
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper{
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+  width: 400px;
+  height: 400px;
+}
+/* flip speed goes here */
+.flipper{
+  transition: 1.0s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+/* back, initially hidden pane */
+.back{
+  transform: rotateY(180deg);
+  background-color: black;
 }
