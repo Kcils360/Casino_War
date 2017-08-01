@@ -1,10 +1,12 @@
 html {
   background-image: url(../img/greenFelt.jpg);
 }
+
 nav{
   background-color: #B14B00;
 }
 #title{
+
   text-align: center;
   color: #B14B00;
   font-family: 'CoffeeTin', sans-serif;
