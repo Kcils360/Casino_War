@@ -60,6 +60,7 @@ div {
   background-color: #E6FFB0;
   color: #182803;
   border-radius: 7px;
+  padding-left: 5px;
 }
 
 .bank p {
@@ -72,15 +73,19 @@ div {
   list-style: none;
 }
 
-.bank li {
-  font-family: 'CoffeeTin', sans-serif;
+.bankList {
+  font-family: 'Limelight', cursive;
   font-weight: 100;
-  font-size: 45px;
+  font-size: 75px;
   color: #B14B00;
 }
 
 .bet {
   font-size: 40px;
+}
+
+.bet p {
+  margin-bottom: 46px;
 }
 
 .bet ul {
@@ -98,6 +103,7 @@ div {
   background-color: #E6FFB0;
   color: #182803;
   border-radius: 7px;
+  padding-left: 5px;
 }
 
 footer {
@@ -108,7 +114,7 @@ footer {
   width: 350px;
   height: 60px;
   position: relative;
-  margin-left: calc(50% - 175px);
+  margin-left: calc(50% - 160px);
   margin-top: 80px;
   background-color: #180B05;
   font-family: 'CoffeeTin', sans-serif;
