@@ -40,7 +40,7 @@ div {
   width: 300px;
   height: 300px;
   margin: 0px 3%;
-  color: #180B05;
+  /*color: #180B05;*/
   font-size: 25px;
   vertical-align: middle;
 }
@@ -58,7 +58,7 @@ div {
   font-family: inherit;
   width: 275px;
   background-color: #E6FFB0;
-  color: #182803;
+  /*color: #182803;*/
   border-radius: 7px;
   padding-left: 5px;
 }
@@ -79,11 +79,12 @@ div {
   font-family: 'Limelight', cursive;
   font-weight: 100;
   font-size: 75px;
-  color: #B14B00;
+  /*color: #B14B00;*/
 }
 
-.bet {
+.bid {
   font-size: 40px;
+  color: black;
 }
 
 .min {
@@ -102,20 +103,21 @@ div {
   font-size: 20px;
   text-align: left;
   padding-left: 50px;
+
 }
 
-.bet ul {
+.bid ul {
   list-style: none;
   padding-left: 0px;
   padding-right: 90px;
   margin-top: 25px;
 }
 
-.bet li {
+.bid li {
   display: inline;
 }
 
-.bet input {
+.bid input {
   font-size: 25px;
   font-family: inherit;
   width: 75px;
