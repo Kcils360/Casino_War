@@ -13,12 +13,14 @@ var dealerHand;
 var playerHand;
 var randomIndex;
 
+
 Card.dealerImg = document.getElementById('dealer_img');
 // Card.one = document.getElementById('card1');
 // Card.two = document.getElementById('card2');
 // Card.three = document.getElementById('card3');
 // Card.four = document.getElementById('card4');
 // Card.five = document.getElementById('card5');
+
 
 
 Card.war = document.getElementById('war');
@@ -111,9 +113,11 @@ function play(){
     alert('GAME OVER !!');
     return;
   }
+
   updatePlayer();
   Card.onTable = [];
   begin();
+
 }
 
 
@@ -143,6 +147,10 @@ function updatePlayer(){
   localStorage.setItem('bank',JSON.stringify(Player.bank));
 }
 
+function cardFlipper() {
+  var x = document.getElementById('flip');
+  x.classList.toggle("flipped");
+}
 
 Card.input.addEventListener('submit',addBet);
 // Card.input.addEventListener('click',play);
