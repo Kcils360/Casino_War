@@ -1,8 +1,22 @@
+@font-face {
+  font-family: "CoffeeTin";
+  src: url("../fonts/CoffeeTin Initials.ttf");
+}
+
 html {
   background-image: url(../img/greenFelt.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 nav{
   background-color: #B14B00;
+  border: 2px solid #9A0000;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+a{
+  margin-left: 90px;
 }
 #title{
   text-align: center;
@@ -12,10 +26,16 @@ nav{
   font-size: 90px;
   border-radius: 60px;
   border: 2px solid #9A0000;
+  font-weight: lighter;
 }
 .person{
+  font-weight: lighter;
+  font-family: 'CoffeeTin', sans-serif;
   font-size: 60px;
   color: #9A0000;
+  background-color: #180B05;
+  border-radius: 60px;
+  border: 2px solid #B14B00
 }
 p{
   color: white;
@@ -25,8 +45,8 @@ p{
 img{
   display: block;
   margin: auto;
-  height: 240px;
-  width: 170px;
+  height: 250px;
+  width: 250px;
 }
 section{
   width: 40%;
