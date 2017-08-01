@@ -61,7 +61,8 @@ form{
 .flip_container{
   width: 190px;
   height: 260px;
-  margin: 0 auto;
+  margin: 0px calc(50% - 95px);
+  padding-left: 5px;
 }
 .flip_container:hover .flip{
   -webkit-transform: rotateY(180deg);
