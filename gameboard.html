@@ -17,14 +17,32 @@
       <p>Here we will put the rules of the game and any additional info.</p>
 
 
-       <section class="flip_container">
-         <div id="flip">
-           <figure><img class="front" id="card_back" src="img/CF_playing card.jpg" alt="card_back" /></figure>
-           <figure><img class="back" id="dealer_img" src="img/cards/7_of_spades.png" alt="Playing Card" /></figure>
-         </div>
+
+       <div class="flip_container">
+
+        <div class="flip">
+
+          <div class="flip_front">
+
+        <img id="card_back" src="img/cardBack.png" alt="card_back" />
+      </div>
+      <!-- <div class="flip-back"> -->
+      </div>
+      <img id="dealer_img" src="" alt="Playing Card" />
+    <!-- </div> -->
+  </div>
+
+
+<section id = "allCard">
+        <img id="card1" src="" />
+        <img id="card2" src="" />
+        <img id="card3" src="" />
+        <img id="card4" src="" />
+        <img id="card5" src="" />
+
+
       </section>
 
-        <img id="player_img" src="" alt="Playing Card" />
 
 <h2 id = "bank">MONEY LEFT</h2>
       <form id = "form">
@@ -33,10 +51,11 @@
           <label for="bid">Place Bet: </label>
           <input name="bid" type="text" />
           <button id = "button">SUBMIT</button>
+          
+
 
         </fieldset>
       </form>
-<button id = "restart">CLICK ON ME TO RESTART</button>
 
     <script src="JS/app.js"></script>
   </body>
