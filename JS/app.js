@@ -32,7 +32,7 @@ new Player('testbot');
 function Card(num,color){
   this.num = num;
   this.color = color;
-  this.source = 'img/PNG-cards-1.3/' + this.num + '_of' + '_' + this.color + '.png';
+  this.source = '../img/PNG-cards-1.3/' + this.num + '_of' + '_' + this.color + '.png';
   Card.deck.push(this);
 }
 
