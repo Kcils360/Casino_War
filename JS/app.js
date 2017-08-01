@@ -23,7 +23,7 @@ Card.dealerImg = document.getElementById('dealer_img');
 
 Card.war = document.getElementById('war');
 Card.section = document.getElementById('imgSection');
-Card.input = document.getElementById('allCard');
+Card.input = document.getElementById('form');
 document.getElementById('bank').innerHTML = Player.bank;
 new Player('testbot');
 
@@ -32,7 +32,7 @@ new Player('testbot');
 function Card(num,color){
   this.num = num;
   this.color = color;
-  this.source = '../img/PNG-cards-1.3/' + this.num + '_of' + '_' + this.color + '.png';
+  this.source = 'img/PNG-cards-1.3/' + this.num + '_of' + '_' + this.color + '.png';
   Card.deck.push(this);
 }
 
@@ -56,8 +56,9 @@ if(localStorage.deck || localStorage.deck === ''){
   }
 }
 
+begin();
 
-(function begin(){
+function begin(){
   dealerHand = randomCard();
   Card.deck.splice(randomIndex,1);
   Card.dealerImg.src = dealerHand.source;
@@ -65,13 +66,12 @@ if(localStorage.deck || localStorage.deck === ''){
     var j = i + 1;
     document.getElementById('card' + j).src = 'img/cardBack.png';
   }
-})();
+}
 
 
 
 function addBet(e){
   e.preventDefault();
-
   // if(Card.deck.length == 0){
   //   alert('GAME OVER!');
   //   return;
@@ -84,20 +84,25 @@ function addBet(e){
   renderTable();
 }
 
+
 function play(){
   for(i = 0; i < Card.onTable.length; i++){
     while(dealerHand.num == Card.onTable[i].num){
-      alert('going to war! on your' + (i + 1) + ' card');
+      alert('going to war on card #' + (i + 1));
       var newCard = randomCard();
-      Card.deck.splice(newCard);
-      Card.onTable.splice(i,1,newCard);
+      Card.deck.splice(newCard,1);
+      Card.onTable[i] = newCard;
       renderTable();
+      // return;
     }
 
     if(compare(dealerHand,Card.onTable[i])){
-      Player.bank += Player.bid[i];
-    } else{
       Player.bank -= Player.bid[i];
+      alert('You LOST $' + Player.bid[i] + ' on card #' + (i + 1));
+    } else{
+      Player.bank += Player.bid[i];
+      alert('You WON $' + Player.bid[i] + ' on card #' + (i + 1));
+
     }
     document.getElementById('bank').innerHTML = Player.bank;
   }
@@ -106,6 +111,9 @@ function play(){
     alert('GAME OVER !!');
     return;
   }
+  updatePlayer();
+  Card.onTable = [];
+  begin();
 }
 
 
@@ -115,8 +123,6 @@ function renderTable(){
     document.getElementById('card' + j).src = Card.onTable[i].source;
   }
 }
-
-
 
 function compare(card1,card2){
   if(card1.num > card2.num){
@@ -132,13 +138,12 @@ function randomCard(){
 }
 
 
-
 function updatePlayer(){
   localStorage.setItem('deck',JSON.stringify(Card.deck));
   localStorage.setItem('bank',JSON.stringify(Player.bank));
 }
 
 
-Card.input.addEventListener('click',addBet);
-Card.input.addEventListener('click',play);
+Card.input.addEventListener('submit',addBet);
+// Card.input.addEventListener('click',play);
 // document.getElementById('restart').addEventListener('submit',restart);
