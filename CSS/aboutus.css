@@ -1,0 +1,30 @@
+*{
+  /*border: 2px solid black;*/
+}
+h1{
+  text-align: center;
+}
+
+img{
+  display: block;
+  margin: auto;
+  height: 240px;
+  width: 170px;
+}
+section{
+  width: 40%;
+}
+#greg{
+  display: inline-block;
+}
+#han{
+  display: inline-block;
+  margin-left: 50px;
+}
+#duane{
+  margin: 0 auto;
+  text-align: center;
+}
+div{
+  text-align: center;
+}

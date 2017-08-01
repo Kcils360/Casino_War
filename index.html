@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" type="text/css" href="homePage.css">
+    <link rel="stylesheet" type="text/css" href="CSS/homePage.css">
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
     <title>Casino War</title>
 
   </head>
@@ -13,26 +14,30 @@
     </header>
     <section>
       <div class="welcome">
-        <p>Welcome!</p>
         <p>Please enter your name</p>
         <input id="username" type="text" name="username" />
       </div>
       <div class="bank">
-        <ul>Bank
-
-
+        <p>Welcome!</p>
+        <ul>Initial Bank
+          <li class="bankList">$200</li>
         </ul>
       </div>
       <div class="bet">
         <p>Inital Bet</p>
-        <p>$</p>
-        <input id="betAmount" type="text" name="betAmount" />
+        <ul>
+          <li>$</li>
+          <li><input id="betAmount" type="text" name="betAmount" /></li>
+        </ul>
       </div>
 
-      <button id="play" type="submit" name="play">Let's Play!</button>
     </section>
+    <footer>
+      <button id="play" type="submit" name="play">Let's Play!</button>
+    </footer>
 
-    <script src="homePage.js"></script>
+
+    <script src="JS/homePage.js"></script>
 
   </body>
 </html>

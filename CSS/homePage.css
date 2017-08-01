@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "CoffeeTin";
+  src: url("fonts/CoffeeTin Initials.ttf");
+}
+
+/** {
+  border: 2px dotted #C71119;
+}*/
+
+html {
+  background-image: url(img/greenFelt.jpg);
+}
+
+body {
+  width: 95%;
+  height: auto;
+  margin: 0px auto;
+}
+
+.title {
+  border: 2px solid #9A0000;
+  border-radius: 60px;
+  margin: 80px 17% 40px 17%;
+  text-align: center;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: lighter;
+  font-size: 120px;
+  color: #B14B00;
+  background-color: #180B05;
+
+}
+
+section {
+  text-align: center;
+  font-family: 'Limelight', cursive;
+}
+
+div {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0px 3%;
+  color: #180B05;
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+.welcome {
+  font-size: 40px;
+}
+
+.welcome p {
+  margin-bottom: 0px;
+}
+
+.welcome input {
+  font-size: 25px;
+  font-family: inherit;
+  width: 275px;
+  background-color: #E6FFB0;
+  color: #182803;
+  border-radius: 7px;
+  padding-left: 5px;
+}
+
+.bank p {
+  margin-top: 0px;
+  font-size: 60px;
+}
+
+.bank ul {
+  font-size: 35px;
+  list-style: none;
+}
+
+.bankList {
+  font-family: 'Limelight', cursive;
+  font-weight: 100;
+  font-size: 75px;
+  color: #B14B00;
+}
+
+.bet {
+  font-size: 40px;
+}
+
+.bet p {
+  margin-bottom: 46px;
+}
+
+.bet ul {
+  list-style: none;
+}
+
+.bet li {
+  display: inline;
+}
+
+.bet input {
+  font-size: 25px;
+  font-family: inherit;
+  width: 75px;
+  background-color: #E6FFB0;
+  color: #182803;
+  border-radius: 7px;
+  padding-left: 5px;
+}
+
+footer {
+  position: relative;
+}
+
+#play {
+  width: 350px;
+  height: 60px;
+  position: relative;
+  margin-left: calc(50% - 160px);
+  margin-top: 80px;
+  background-color: #180B05;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: 100;
+  font-size: 45px;
+  color: #B14B00;
+  border-radius: 30px;
+  border-color: #9A0000;
+}
