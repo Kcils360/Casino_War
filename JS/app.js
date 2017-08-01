@@ -4,18 +4,26 @@ Card.deck = [];
 Card.refresh = [];
 Card.color = ['clubs','hearts','spades','diamonds'];
 Card.left = 52;
+Card.onTable = [];
+Player.click = 0;
 Player.info = [];
-Player.bid = 0;
+Player.bid = [];
 Player.bank = 200;
 var dealerHand;
 var playerHand;
 var randomIndex;
 
 Card.dealerImg = document.getElementById('dealer_img');
-Card.playerImg = document.getElementById('player_img');
+// Card.one = document.getElementById('card1');
+// Card.two = document.getElementById('card2');
+// Card.three = document.getElementById('card3');
+// Card.four = document.getElementById('card4');
+// Card.five = document.getElementById('card5');
+
+
 Card.war = document.getElementById('war');
 Card.section = document.getElementById('imgSection');
-Card.input = document.getElementById('form');
+Card.input = document.getElementById('allCard');
 document.getElementById('bank').innerHTML = Player.bank;
 new Player('testbot');
 
@@ -34,7 +42,6 @@ function Player(name){
 }
 
 
-
 if(localStorage.deck || localStorage.deck === ''){
 
   Card.deck = JSON.parse(localStorage.getItem('deck'));
@@ -49,53 +56,66 @@ if(localStorage.deck || localStorage.deck === ''){
   }
 }
 
-function play(e){
+
+(function begin(){
+  dealerHand = randomCard();
+  Card.deck.splice(randomIndex,1);
+  Card.dealerImg.src = dealerHand.source;
+  for(i = 0; i < 5; i++){
+    var j = i + 1;
+    document.getElementById('card' + j).src = 'img/cardBack.png';
+  }
+})();
+
+
+
+function addBet(e){
   e.preventDefault();
 
-  if(Card.deck.length == 0){
-    alert('GAME OVER!');
-    return;
-  }
+  // if(Card.deck.length == 0){
+  //   alert('GAME OVER!');
+  //   return;
+  // }
 
-  Player.bid = parseInt(e.target.bid.value);
+  Player.bid.push(parseInt(e.target.bid.value));
+  playerHand = randomCard();
+  Card.onTable.push(playerHand);
+  Card.deck.splice(randomIndex,1);
   renderTable();
+}
 
-  while(dealerHand.num == playerHand.num){
-    Player.bid = Player.bid * 2;
-    alert('going to war! Your bid is now ' + Player.bid);
-    renderTable();
+function play(){
+  for(i = 0; i < Card.onTable.length; i++){
+    while(dealerHand.num == Card.onTable[i].num){
+      alert('going to war! on your' + (i + 1) + ' card');
+      var newCard = randomCard();
+      Card.deck.splice(newCard);
+      Card.onTable.splice(i,1,newCard);
+      renderTable();
+    }
+
+    if(compare(dealerHand,Card.onTable[i])){
+      Player.bank += Player.bid[i];
+    } else{
+      Player.bank -= Player.bid[i];
+    }
+    document.getElementById('bank').innerHTML = Player.bank;
   }
-
-  if(compare(dealerHand,playerHand)){
-    Player.bank += Player.bid;
-  } else{
-    Player.bank -= Player.bid;
-  }
-
-  Player.bid = 0;
-  updatePlayer();
-  document.getElementById('bank').innerHTML = Player.bank;
-
 
   if(Player.bank <= 0){
     alert('GAME OVER !!');
     return;
   }
-
 }
 
 
 function renderTable(){
-  dealerHand = randomCard();
-  Card.deck.splice(randomIndex,1);
-
-  playerHand = randomCard();
-  Card.deck.splice(randomIndex,1);
-
-  Card.playerImg.src = playerHand.source;
-  Card.dealerImg.src = dealerHand.source;
-
+  for(i = 0; i < Card.onTable.length; i++){
+    var j = i + 1;
+    document.getElementById('card' + j).src = Card.onTable[i].source;
+  }
 }
+
 
 
 function compare(card1,card2){
@@ -119,6 +139,6 @@ function updatePlayer(){
 }
 
 
-
-Card.input.addEventListener('submit',play);
+Card.input.addEventListener('click',addBet);
+Card.input.addEventListener('click',play);
 // document.getElementById('restart').addEventListener('submit',restart);
