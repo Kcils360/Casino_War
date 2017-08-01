@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "CoffeeTin";
+  src: url("../fonts/CoffeeTin Initials.ttf");
+}
+
 * {
   color: black;
  /*border: 2px solid black;*/
@@ -7,9 +12,16 @@ background-image: url(../img/greenFelt.jpg);
 
 }
 
-h1{
-  background-color: gold;
-  text-align: center;
+header h1 {
+    border: 2px solid #9A0000;
+    border-radius: 50px;
+    margin: 50px 17% 40px 17%;
+    text-align: center;
+    font-family: 'CoffeeTin', sans-serif;
+    font-weight: lighter;
+    font-size: 100px;
+    color: #B14B00;
+    background-color: #180B05;
 }
 nav{
   background-color: red;
