@@ -1,6 +1,11 @@
 *{
   /*border: 2px solid black;*/
 }
+
+html {
+    background-image: url(../img/greenFelt.jpg);
+}
+
 h1{
   text-align: center;
 }

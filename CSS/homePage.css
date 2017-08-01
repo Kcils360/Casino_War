@@ -1,6 +1,6 @@
 @font-face {
   font-family: "CoffeeTin";
-  src: url("fonts/CoffeeTin Initials.ttf");
+  src: url("../fonts/CoffeeTin Initials.ttf");
 }
 
 /** {
@@ -71,6 +71,8 @@ div {
 .bank ul {
   font-size: 35px;
   list-style: none;
+  padding-right: 40px;
+  padding-left: 30px;
 }
 
 .bankList {
@@ -84,12 +86,29 @@ div {
   font-size: 40px;
 }
 
-.bet p {
-  margin-bottom: 46px;
+.min {
+  font-size: 20px;
+  margin: 0px;
+
+}
+
+.bet h4 {
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+
+.bet h6 {
+  margin: 0px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 50px;
 }
 
 .bet ul {
   list-style: none;
+  padding-left: 0px;
+  padding-right: 90px;
+  margin-top: 25px;
 }
 
 .bet li {
@@ -114,7 +133,7 @@ footer {
   width: 350px;
   height: 60px;
   position: relative;
-  margin-left: calc(50% - 160px);
+  margin-left: calc(50% - 175px);
   margin-top: 80px;
   background-color: #180B05;
   font-family: 'CoffeeTin', sans-serif;
