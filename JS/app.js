@@ -13,12 +13,14 @@ var dealerHand;
 var playerHand;
 var randomIndex;
 
+
 Card.dealerImg = document.getElementById('dealer_img');
 // Card.one = document.getElementById('card1');
 // Card.two = document.getElementById('card2');
 // Card.three = document.getElementById('card3');
 // Card.four = document.getElementById('card4');
 // Card.five = document.getElementById('card5');
+
 
 
 Card.war = document.getElementById('war');
@@ -32,7 +34,7 @@ new Player('testbot');
 function Card(num,color){
   this.num = num;
   this.color = color;
-  this.source = '../img/PNG-cards-1.3/' + this.num + '_of' + '_' + this.color + '.png';
+  this.source = 'img/PNG-cards-1.3/' + this.num + '_of' + '_' + this.color + '.png';
   Card.deck.push(this);
 }
 
@@ -106,6 +108,9 @@ function play(){
     alert('GAME OVER !!');
     return;
   }
+
+  cardFlipper();
+
 }
 
 
@@ -138,6 +143,10 @@ function updatePlayer(){
   localStorage.setItem('bank',JSON.stringify(Player.bank));
 }
 
+function cardFlipper() {
+  var x = document.getElementById('flip');
+  x.classList.toggle("flipped");
+}
 
 Card.input.addEventListener('click',addBet);
 Card.input.addEventListener('click',play);
