@@ -51,7 +51,6 @@ if(localStorage.deck || localStorage.deck === ''){
 
 function play(e){
   e.preventDefault();
-  document.getElementById('flip_container').style.webkitTransition = '.flip';
 
   if(Card.deck.length == 0){
     alert('GAME OVER!');
@@ -82,7 +81,7 @@ function play(e){
     alert('GAME OVER !!');
     return;
   }
-
+  cardFlipper();
 }
 
 
@@ -119,8 +118,11 @@ function updatePlayer(){
   localStorage.setItem('bank',JSON.stringify(Player.bank));
 }
 
+function cardFlipper() {
+  var x = document.getElementById('flip');
+  x.classList.toggle("flipped");
+}
 
 
 Card.input.addEventListener('submit',play);
 // document.getElementById('restart').addEventListener('submit',restart);
-//++++++++++++++++++++++++++++++card flip on button press+++++++++++++++++++++

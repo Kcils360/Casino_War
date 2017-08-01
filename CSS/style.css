@@ -97,3 +97,39 @@ form{
   text-indent:0;
   line-height:500px;
 }
+/*++++++++++++++++++++++++++++++Card Flip v2++++++++++++++++*/
+/*
+.flip_container{
+  width: 170px;
+  height: 240px;
+  margin: 0px calc(50% - 85px);
+  position: relative;
+  perspective: 800px;
+}
+
+#flip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-origin: right;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+#flip figure {
+  margin: 0px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#flip .back {
+  transform: rotateY(180deg);
+}
+
+#flip .flipped {
+  transform: rotateY(180deg);
+  transform: translateX(-100%) rotateY(-180deg);
+}*/
