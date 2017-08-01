@@ -42,9 +42,8 @@ section{
 #card_back{
   display: block;
   margin: 0 auto;
-  margin-left: 5px;
-  height: 255px;
-  width: 185px;
+  height: 240px;
+  width: 170px;
 
 
 }
@@ -59,10 +58,12 @@ form{
 /*/------card flip--------------*/
 
 .flip_container{
-  width: 190px;
-  height: 260px;
-  margin: 0px calc(50% - 95px);
-  padding-left: 5px;
+  width: 170px;
+  height: 240px;
+  margin: 0px calc(50% - 85px);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+
 }
 .flip_container:hover .flip{
   -webkit-transform: rotateY(180deg);
@@ -75,21 +76,17 @@ form{
           transform-style: preserve-3d;
   position: relative;
 }
+
 .flip_front {
+  width: 170px;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   position: absolute;
        top: 0;
       left: 0;
-}
-.flip_front {
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);*/
-}
-/*.flip_back {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}*/
+
 
 
 

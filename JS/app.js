@@ -11,7 +11,7 @@ var dealerHand;
 var playerHand;
 var randomIndex;
 
-Card.dealerImg = document.getElementById('dealer_img');
+// Card.dealerImg = document.getElementById('dealer_img');
 Card.playerImg = document.getElementById('player_img');
 Card.war = document.getElementById('war');
 Card.section = document.getElementById('imgSection');
@@ -51,6 +51,7 @@ if(localStorage.deck || localStorage.deck === ''){
 
 function play(e){
   e.preventDefault();
+  document.getElementById('flip_container').style.webkitTransition = '.flip';
 
   if(Card.deck.length == 0){
     alert('GAME OVER!');
@@ -122,3 +123,4 @@ function updatePlayer(){
 
 Card.input.addEventListener('submit',play);
 // document.getElementById('restart').addEventListener('submit',restart);
+//++++++++++++++++++++++++++++++card flip on button press+++++++++++++++++++++
