@@ -1,6 +1,6 @@
 'use strict';
 
-
+localStorage.clear();
 function saveName(e){
   e.preventDefault();
   var username = document.getElementById('username').value;
