@@ -1,3 +1,6 @@
+/**{
+  border: 2px solid black;
+}*/
 @font-face {
   font-family: "CoffeeTin";
   src: url("../fonts/CoffeeTin Initials.ttf");
@@ -11,6 +14,7 @@ body {
   width: 95%;
   height: auto;
   margin: 0px auto;
+  z-index: 0;
 }
 
 nav a {
@@ -105,44 +109,6 @@ div {
 
 }
 
-.bet h4 {
-  margin-top: 40px;
-  margin-bottom: 0px;
-  font-size: 40px;
-  font-weight: lighter;
-}
-
-.bet h6 {
-  margin: 0px;
-  font-size: 20px;
-  text-align: left;
-  padding-left: 50px;
-
-}
-
-.bet ul {
-  list-style: none;
-  padding-left: 0px;
-  padding-right: 90px;
-  margin-top: 25px;
-}
-
-.bet li {
-  display: inline;
-  font-size: 25px;
-  width: 30px;
-}
-
-.bet input {
-  font-size: 25px;
-  font-family: inherit;
-  width: 75px;
-  background-color: #E6FFB0;
-  color: #182803;
-  border-radius: 7px;
-  padding-left: 5px;
-}
-
 footer {
   position: relative;
 }
@@ -160,4 +126,12 @@ footer {
   color: #B14B00;
   border-radius: 30px;
   border-color: #9A0000;
+}
+#video{
+  margin-right: 10px;
+}
+iframe{
+  width: 460px;
+  height: 315px;
+pointer-events: none;
 }
