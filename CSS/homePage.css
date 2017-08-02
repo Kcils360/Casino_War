@@ -61,15 +61,15 @@ div {
   vertical-align: middle;
 }
 
-.welcome {
+.name {
   font-size: 40px;
 }
 
-.welcome p {
+.name p {
   margin-bottom: 0px;
 }
 
-.welcome input {
+.name input {
   font-size: 25px;
   font-family: inherit;
   width: 275px;
@@ -79,23 +79,22 @@ div {
   padding-left: 5px;
 }
 
-.bank p {
+.welcome h2 {
   margin-top: 0px;
   font-size: 60px;
 }
 
-.bank ul {
+.welcome p {
+  margin-top: 0px;
+  font-size: 35px;
+  color: #180B05;
+}
+
+.welcome ul {
   font-size: 35px;
   list-style: none;
   padding-right: 40px;
   padding-left: 30px;
-}
-
-.bankList {
-  font-family: 'Limelight', cursive;
-  font-weight: 100;
-  font-size: 75px;
-  color: #B14B00;
 }
 
 .bid {
@@ -113,7 +112,7 @@ footer {
   position: relative;
 }
 
-#play {
+#continue {
   width: 350px;
   height: 60px;
   position: relative;
@@ -128,13 +127,13 @@ footer {
   border-color: #9A0000;
 }
 
-#play:hover {
+#continue:hover {
   background-color: #182803;
   color: #E6FFB0;
   border-color: #B14B00;
 }
 
-#play:active {
+#continue:active {
   background-color: #9A0000;
   color: #180B05;
   border-color: #B14B00;
