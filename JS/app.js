@@ -107,7 +107,7 @@ function addBet(e){
 
 
 function play(){
-  for(var k = 0; k < 5; k++){
+  for(var k = 0; k < Card.onTable.length; k++){
     var x = Card.onTable[k];
     while(dealerHand.num == x.num){
       alert('going to war on card #' + (k + 1));
@@ -138,6 +138,7 @@ function play(){
   // updatePlayer();
   Card.onTable = [];
   Player.bid = [];
+  Player.click = 0;
   begin();
 }
 

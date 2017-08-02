@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "CoffeeTin";
+  src: url("../fonts/CoffeeTin Initials.ttf");
+}
+
+html {
+  background-image: url(../img/greenFelt.jpg);
+}
+
+body {
+  width: 95%;
+  height: auto;
+  margin: 0px auto;
+}
+
+nav a {
+  float: right;
+  font-size: 30px;
+  font-family: 'Limelight', cursive;
+  color: #180B05;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E6FFB0;
+}
+
+a:active {
+  text-decoration: underline;
+  color: #B14B00;
+}
+
+.title {
+  border: 2px solid #9A0000;
+  border-radius: 60px;
+  margin: 80px 17% 40px 17%;
+  text-align: center;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: lighter;
+  font-size: 120px;
+  color: #B14B00;
+  background-color: #180B05;
+}
+
+section {
+  text-align: center;
+  font-family: 'Limelight', cursive;
+}
+
+div {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0px 3%;
+  color: #180B05;
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+.howTo {
+  width: 600px;
+}
+
+.howTo h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+.min {
+  font-size: 20px;
+  margin: 0px;
+
+}
+
+.bet h4 {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+.bet h6 {
+  margin: 0px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 50px;
+
+}
+
+.bet ul {
+  list-style: none;
+  padding-left: 0px;
+  padding-right: 90px;
+  margin-top: 25px;
+}
+
+.bet li {
+  display: inline;
+}
+
+.bet input {
+  font-size: 25px;
+  font-family: inherit;
+  width: 75px;
+  background-color: #E6FFB0;
+  color: #182803;
+  border-radius: 7px;
+  padding-left: 5px;
+}
+
+
+footer {
+  position: relative;
+}
+
+#play {
+  width: 350px;
+  height: 60px;
+  position: relative;
+  margin-left: calc(50% - 175px);
+  margin-top: 80px;
+  background-color: #180B05;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: 100;
+  font-size: 45px;
+  color: #B14B00;
+  border-radius: 30px;
+  border-color: #9A0000;
+}
