@@ -73,6 +73,19 @@ img{
 section{
   width: 40%;
 }
+
+.purple {
+  color: #9b59b6;
+}
+
+.yellow {
+  color: #f39c12;
+}
+
+.blue {
+  color: #2980b9;
+}
+
 #greg{
   display: inline-block;
 }
