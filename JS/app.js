@@ -6,21 +6,20 @@ Card.color = ['clubs','hearts','spades','diamonds'];
 Card.left = 52;
 Card.onTable = [];
 Player.click = 0;
-Player.info = [];
 Player.bid = [];
 Player.bank = 0;
+var gambler;
 var dealerHand;
 var playerHand;
 var randomIndex;
 
 
 Card.dealerImg = document.getElementById('dealer_img');
-
-
 Card.war = document.getElementById('war');
 Card.section = document.getElementById('imgSection');
 Card.input = document.getElementById('form');
-document.getElementById('bank').innerHTML = Player.bank;
+
+
 
 
 function Card(num,color){
@@ -32,40 +31,47 @@ function Card(num,color){
 
 function Player(name){
   this.name = name;
-  Player.info.push(this);
 }
 
-
-if(localStorage.deck || localStorage.deck === ''){
-  Card.deck = JSON.parse(localStorage.getItem('deck'));
-  // Card.onTable = JSON.parse(localStorage.getItem('onTable'));
-} else{
-  for(var j = 0; j <= 3; j++){
-    for(var i = 2; i <= 14; i ++){
-      new Card(i,Card.color[j]);
+function getLocal(){
+  Card.deck = [];
+  if(localStorage.deck || localStorage.deck === ''){
+    Card.deck = JSON.parse(localStorage.getItem('deck'));
+    // Card.onTable = JSON.parse(localStorage.getItem('onTable'));
+  } else{
+    for(var j = 0; j <= 3; j++){
+      for(var i = 2; i <= 14; i ++){
+        new Card(i,Card.color[j]);
+      }
     }
+    updateDeck();
   }
+  if(localStorage.bank || localStorage.bank === ''){
+    Player.bank = parseInt(localStorage.getItem('bank'));
+  } else{
+    Player.bank = 200;
+  }
+  updateBank();
 }
 
-if(localStorage.bank || localStorage.bank === ''){
-  Player.bank = JSON.parse(localStorage.getItem('bank'));
-} else{
-  Player.bank = 200;
+function getName(){
+  if(localStorage.gambler || localStorage.gambler === ''){
+    gambler = localStorage.getItem('gambler');
+  } else{
+    gambler = 'Guest Player';
+  }
+  updateName();
 }
 
-// if(localStorage.gambler || localStorage.gambler === ''){
-//
-// }
-
-
-
+getName();
+getLocal();
 begin();
 
 function begin(){
   dealerHand = randomCard();
   Card.deck.splice(randomIndex,1);
   Card.dealerImg.src = dealerHand.source;
-  for(i = 0; i < 5; i++){
+  for(var i = 0; i < 5; i++){
     var j = i + 1;
     document.getElementById('card' + j).src = 'img/cardBack.png';
   }
@@ -106,6 +112,7 @@ function addBet(e){
   resetInput();
   renderTable();
   updateBank();
+  updateDeck();
 }
 
 
@@ -127,11 +134,13 @@ function play(){
         alert('going to war on card #' + (k + 1) + ' Your bet for this card has been raised to: $ ' + Player.bid[k]);
         dealerHand = randomCard();
         Card.deck.splice(dealerHand,1);
+        updateDeck();
         alert('Dealer is now holding a new card');
         Card.dealerImg.src = dealerHand.source;
 
         Card.onTable[k] = randomCard();
         Card.deck.splice(Card.onTable[k],1);
+        updateDeck();
         renderTable();
 
         if(compare(dealerHand,x)){
@@ -153,23 +162,17 @@ function play(){
     alert('GAME OVER !!');
     return;
   }
-  // updatePlayer();
+
   Card.onTable = [];
   Player.bid = [];
   Player.click = 0;
-
   begin();
 
-
-}
-
-function updateBank(){
-  document.getElementById('bank').innerHTML = '$' + Player.bank;
 }
 
 
 function renderTable(){
-  for(i = 0; i < Card.onTable.length; i++){
+  for(var i = 0; i < Card.onTable.length; i++){
     var j = i + 1;
     document.getElementById('card' + j).src = Card.onTable[i].source;
   }
@@ -188,17 +191,36 @@ function randomCard(){
   return Card.deck[randomIndex];
 }
 
-
-function updatePlayer(){
-  localStorage.setItem('deck',JSON.stringify(Card.deck));
+function updateBank(){
+  document.getElementById('bank').innerHTML = Player.bank;
   localStorage.setItem('bank',JSON.stringify(Player.bank));
-  // localStorage.setItem('onTable',JSON.stringify(Card.onTable));
 }
+
+function updateName(){
+  document.getElementById('gambler').innerHTML = gambler;
+  localStorage.setItem('gambler',JSON.stringify(gambler));
+}
+
+
+function updateDeck(){
+  localStorage.setItem('deck',JSON.stringify(Card.deck));
+}
+
+
+function reset(){
+  localStorage.removeItem('deck');
+  localStorage.removeItem('bank');
+  getLocal();
+  begin();
+}
+
 
 function resetInput(){
   Card.input.reset();
 }
 
+
+document.getElementById('bank').innerHTML = Player.bank;
+document.getElementById('gambler').innerHTML = gambler;
+
 Card.input.addEventListener('submit',addBet);
-// Card.input.addEventListener('click',play);
-// document.getElementById('restart').addEventListener('submit',restart);
