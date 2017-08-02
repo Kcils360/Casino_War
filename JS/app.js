@@ -59,8 +59,9 @@ function getName(){
     gambler = localStorage.getItem('gambler');
   } else{
     gambler = 'Guest Player';
+    updateName();
   }
-  updateName();
+  document.getElementById('gambler').innerHTML = gambler;
 }
 
 getName();
@@ -222,5 +223,4 @@ function resetInput(){
 
 document.getElementById('bank').innerHTML = Player.bank;
 document.getElementById('gambler').innerHTML = gambler;
-
 Card.input.addEventListener('submit',addBet);
