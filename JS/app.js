@@ -13,6 +13,7 @@ var dealerHand;
 var playerHand;
 var randomIndex;
 
+
 Card.dealerImg = document.getElementById('dealer_img');
 // Card.one = document.getElementById('card1');
 // Card.two = document.getElementById('card2');
@@ -46,11 +47,11 @@ if(localStorage.deck || localStorage.deck === ''){
 
   Card.deck = JSON.parse(localStorage.getItem('deck'));
   Player.bank = JSON.parse(localStorage.getItem('bank'));
-  updatePlayer();
+  // Card.onTable = JSON.parse(localStorage.getItem('onTable'));
 
 } else{
-  for(var j = 0; j < 4; j++){
-    for(var i = 2; i < 15; i ++){
+  for(var j = 0; j <= 3; j++){
+    for(var i = 2; i <= 14; i ++){
       new Card(i,Card.color[j]);
     }
   }
@@ -72,50 +73,78 @@ function begin(){
 
 function addBet(e){
   e.preventDefault();
+  var chip = e.target.bid.value;
   // if(Card.deck.length == 0){
   //   alert('GAME OVER!');
   //   return;
   // }
 
-  Player.bid.push(parseInt(e.target.bid.value));
+  if(isNaN(parseInt(chip))){
+    resetInput();
+    return alert('MUST BE A NUMBER!');
+  }
+
+  if(Player.click > 5){
+    resetInput();
+    return alert('Max # of card to bet is 5!');
+  }
+  if(chip > (Player.bank)){
+    resetInput();
+    return alert('Credit is no good! CASH ONLY!');
+  }
+
+
+  Player.bid.push(parseInt(chip));
+  Player.bank -= chip;
+  Player.click ++;
   playerHand = randomCard();
   Card.onTable.push(playerHand);
   Card.deck.splice(randomIndex,1);
+  resetInput();
   renderTable();
+  updateBank();
 }
 
 
 function play(){
-  for(i = 0; i < Card.onTable.length; i++){
-    while(dealerHand.num == Card.onTable[i].num){
-      alert('going to war on card #' + (i + 1));
-      var newCard = randomCard();
-      Card.deck.splice(newCard,1);
-      Card.onTable[i] = newCard;
+  for(var k = 0; k < 5; k++){
+    var x = Card.onTable[k];
+    while(dealerHand.num == x.num){
+      alert('going to war on card #' + (k + 1));
+      dealerHand = randomCard();
+      Card.deck.splice(dealerHand,1);
+      Card.dealerImg.src = dealerHand.source;
+
+      Card.onTable[k] = randomCard();
+      Card.deck.splice(Card.onTable[k],1);
       renderTable();
-      // return;
     }
 
-    if(compare(dealerHand,Card.onTable[i])){
-      Player.bank -= Player.bid[i];
-      alert('You LOST $' + Player.bid[i] + ' on card #' + (i + 1));
+    if(compare(dealerHand,x)){
+      alert('You LOST $' + Player.bid[k] + ' on card #' + (k + 1));
     } else{
-      Player.bank += Player.bid[i];
-      alert('You WON $' + Player.bid[i] + ' on card #' + (i + 1));
+      Player.bank += (2 * Player.bid[k]);
+      alert('You WON $' + Player.bid[k] + ' on card #' + (k + 1));
+      updateBank();
 
     }
-    document.getElementById('bank').innerHTML = Player.bank;
+    updateBank();
   }
 
   if(Player.bank <= 0){
     alert('GAME OVER !!');
     return;
   }
-  updatePlayer();
+  // updatePlayer();
   Card.onTable = [];
+  Player.bid = [];
   begin();
 }
 
+function updateBank(){
+  document.getElementById('bank').innerHTML = Player.bank;
+
+}
 
 function renderTable(){
   for(i = 0; i < Card.onTable.length; i++){
@@ -141,6 +170,11 @@ function randomCard(){
 function updatePlayer(){
   localStorage.setItem('deck',JSON.stringify(Card.deck));
   localStorage.setItem('bank',JSON.stringify(Player.bank));
+  // localStorage.setItem('onTable',JSON.stringify(Card.onTable));
+}
+
+function resetInput(){
+  Card.input.reset();
 }
 
 
