@@ -7,7 +7,7 @@ function initiateGame(e){
   var betAmount = document.getElementById('betAmount').value;
   console.log(username, ' bet ', betAmount);
   localStorage.setItem('username', username);
-  localStorage.setItem('betAmount', betAmount);
+  localStorage.setItem('betAmount', parseInt(betAmount));
 };
 
 
