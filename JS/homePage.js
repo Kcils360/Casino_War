@@ -8,7 +8,9 @@ function initiateGame(e){
   console.log(username, ' bet ', betAmount);
   localStorage.setItem('username', username);
   localStorage.setItem('betAmount', parseInt(betAmount));
-};
+
+}
+
 
 
 
