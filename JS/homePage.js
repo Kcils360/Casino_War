@@ -1,18 +1,9 @@
 'use strict';
 
 
-function initiateGame(e){
+function saveName(e){
   e.preventDefault();
   var username = document.getElementById('username').value;
-  var betAmount = document.getElementById('betAmount').value;
-  console.log(username, ' bet ', betAmount);
-  localStorage.setItem('username', username);
-  localStorage.setItem('betAmount', parseInt(betAmount));
-
+  localStorage.setItem('gambler', username);
 }
-
-
-
-
-
-document.getElementById('play').addEventListener('click', initiateGame);
+document.getElementById('continue').addEventListener('click', saveName);
