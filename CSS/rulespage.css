@@ -57,15 +57,29 @@ div {
   vertical-align: middle;
 }
 
-.howTo {
-  width: 600px;
+.howTo h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: lighter;
 }
 
-.howTo h2 {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-size: 40px;
-    font-weight: lighter;
+.howTo {
+  width: 700px;
+  height: 350px;
+
+}
+
+.howTo p {
+  width: 700px;
+  height: 220px;
+  border: 2px solid #9A0000;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(24,11,5,.65);
+  font-family: Garamond;
+  font-size: 30px;
+  color: #E6FFB0;
 }
 
 .min {
@@ -101,13 +115,13 @@ div {
 }
 
 .bet input {
-  font-size: 25px;
+  font-size: 50px;
   font-family: inherit;
-  width: 75px;
+  width: 150px;
   background-color: #E6FFB0;
   color: #182803;
   border-radius: 7px;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 
@@ -128,4 +142,16 @@ footer {
   color: #B14B00;
   border-radius: 30px;
   border-color: #9A0000;
+}
+
+#play:hover {
+  background-color: #182803;
+  color: #E6FFB0;
+  border-color: #B14B00;
+}
+
+#play:active {
+  background-color: #9A0000;
+  color: #180B05;
+  border-color: #B14B00;
 }

@@ -129,6 +129,8 @@ div {
 
 .bet li {
   display: inline;
+  font-size: 25px;
+  width: 30px;
 }
 
 .bet input {
