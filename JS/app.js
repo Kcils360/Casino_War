@@ -157,7 +157,10 @@ function play(){
   Card.onTable = [];
   Player.bid = [];
   Player.click = 0;
-  // begin();
+
+  begin();
+
+
 }
 
 function updateBank(){
