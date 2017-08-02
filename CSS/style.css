@@ -3,10 +3,10 @@
   src: url("../fonts/CoffeeTin Initials.ttf");
 }
 
-* {
+/** {
   color: black;
- /*border: 2px solid black;*/
-}
+ border: 2px solid black;
+}*/
 html{
 background-image: url(../img/greenFelt.jpg);
 
@@ -23,136 +23,81 @@ header h1 {
     color: #B14B00;
     background-color: #180B05;
 }
-nav{
-  background-color: red;
-}
-p{
-  margin: auto;
-  width: 600px;
+#dealer{
+  text-align: right;
+  margin-left: auto;
+  position: relative;
+  right: 670px;
+  width: 200px;
 }
 
-.allCard{
+#allCard{
   display: inline-block;
+  margin-left: 330px;
 }
 
 
 section img{
-  height: 100px;
-  width: 70px;
+  height: 150px;
+  width: 105px;
+  margin-bottom: 10px;
 }
 
 
 #dealer_img{
   display: block;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-bottom: 15px;
   height: 240px;
   width: 170px;
 
 }
-#player_img{
-  display: block;
-  margin: 0 auto;
-  margin-top: 50px;
-  height: 240px;
-  width: 170px;
-}
-#card_back{
-  display: block;
-  margin: 0 auto;
-  height: 240px;
-  width: 170px;
 
-
-}
 
 h2{
-  color:white;
+  color:#E6FFB0;
 }
 form{
+  position: relative;
+  top: 110px;
   width: 250px;
+}
+label{
+  color: #E6FFB0;
+  font-size: 25px;
 }
 
 .quit {
   float: right;
-  
+  margin-right: 40px;
 }
-
-/*/------card flip--------------*/
-
-.flip_container{
-  width: 170px;
-  height: 240px;
-  margin: 0px calc(50% - 85px);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-
-}
-.flip_container:hover .flip{
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-.flip {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+.card-label{
   position: relative;
+  top: 15px;
+  right: 85px;
+  display: inline-block;
+  width: 70px;
+  color: #E6FFB0;
+  font-size: 25px;
 }
-
-.flip_front {
-  width: 170px;
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+#current-bank{
+  width: 150px;
   position: absolute;
-       top: 0;
-      left: 0;
-
-
-
-
-.gameover{
-  position:fixed; z-index:100000; left:0; top:0; bottom:0; right:0; background-color:rgba(0,0,0,0.8);
-  animation:gameover 20s linear forwards;
-  font-size:80px; color:white; font-weight:bold; text-align:center;
-  text-indent:0;
-  line-height:500px;
+  left: 70px;
+  top: 200px;
 }
-/*++++++++++++++++++++++++++++++Card Flip v2++++++++++++++++*/
-/*
-.flip_container{
-  width: 170px;
-  height: 240px;
-  margin: 0px calc(50% - 85px);
-  position: relative;
-  perspective: 800px;
-}
-
-#flip {
-  width: 100%;
-  height: 100%;
+#bank{
   position: absolute;
-  transform-origin: right;
-  transform-style: preserve-3d;
-  transition: transform 1s;
+  left: 80px;
+  top: 230px;
 }
-
-#flip figure {
-  margin: 0px;
-  display: block;
+#play-button{
   position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+  top: 710px;
+  right: 1200px;
 }
-
-#flip .back {
-  transform: rotateY(180deg);
+#username{
+  text-align: center;
+  font-size: 20px;
+  color: #E6FFB0
 }
-
-#flip .flipped {
-  transform: rotateY(180deg);
-  transform: translateX(-100%) rotateY(-180deg);
-}*/

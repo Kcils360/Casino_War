@@ -14,7 +14,7 @@ nav{
   border: 2px solid #9A0000;
   border-radius: 25px;
   width: 400px;
-  position: fixed;
+  /*position: fixed;*/
   margin-top: 30px;
   margin-left: 73%;
   z-index: 1;
@@ -54,7 +54,7 @@ a:hover {
   font-weight: lighter;
   font-family: 'CoffeeTin', sans-serif;
   font-size: 60px;
-  color: #9A0000;
+  color: #E6FFB0;
   background-color: #180B05;
   border-radius: 60px;
   border: 2px solid #B14B00
@@ -123,4 +123,7 @@ div{
   transform: rotateY(180deg);
   color: #E6FFB0;
   background-color: #180B05;
+}
+.flip-container{
+  margin: 0 auto;
 }

@@ -9,49 +9,51 @@
     <header>
       <h1>Casino War</h1>
     </header>
-      <p>Here we will put the rules of the game and any additional info.</p>
+    <h2 id="dealer">Dealer</h2>
 
+        <!-- <img id="card_back" src="img/cardBack.png" alt="card_back" /> -->
 
-
-       <div class="flip_container">
-
-        <div class="flip">
-
-          <div class="flip_front">
-
-        <img id="card_back" src="img/cardBack.png" alt="card_back" />
-      </div>
-      <!-- <div class="flip-back"> -->
-      </div>
       <img id="dealer_img" src="" alt="Playing Card" />
-    <!-- </div> -->
-  </div>
 
 
-<section id = "allCard">
-        <img id="card1" src="" />
-        <img id="card2" src="" />
-        <img id="card3" src="" />
-        <img id="card4" src="" />
-        <img id="card5" src="" />
 
-      </section>
-
-
-<h2 id = "bank">MONEY LEFT</h2>
       <form id = "form">
         <fieldset>
 
-          <label for="bid">Place Bet: </label>
+          <label for="bid">Place Bet $: </label>
           <input name="bid" type="text" />
-          <button id = "button">SUBMIT</button>
+          <button id = "button">SUBMIT BET</button>
 
 
         </fieldset>
       </form>
 
-      <button onclick = "play()">CLICK ME TO PLAY </button>
-      <button class="quit" onclick="location.href='index.html';" />RAAAAAGE QUIT<button>
+<section id = "allCard">
+        <img id="card1" src="" />
+        <p class="card-label">Card 1</p>
+        <img id="card2" src="" />
+        <p class="card-label">Card 2</p>
+        <img id="card3" src="" />
+        <p class="card-label">Card 3</p>
+        <img id="card4" src="" />
+        <p class="card-label">Card 4</p>
+        <img id="card5" src="" />
+        <p class="card-label">Card 5</p>
+
+      </section>
+
+      <h2 id="current-bank">Current Bank</h2>
+      <h2 id = "bank"></h2>
+
+
+
+
+      <button id="play-button" onclick = "play()">CLICK ME TO PLAY </button>
+      <button class="quit" onclick="location.href='index.html';" />RAAAAAGE QUIT</button>
+
+      <section >
+        <p id="username">username</p>
+      </section>
 
     <script src="JS/app.js"></script>
   </body>
