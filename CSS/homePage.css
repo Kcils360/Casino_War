@@ -127,6 +127,19 @@ footer {
   border-radius: 30px;
   border-color: #9A0000;
 }
+
+#play:hover {
+  background-color: #182803;
+  color: #E6FFB0;
+  border-color: #B14B00;
+}
+
+#play:active {
+  background-color: #9A0000;
+  color: #180B05;
+  border-color: #B14B00;
+}
+
 #video{
   margin-right: 10px;
 }
