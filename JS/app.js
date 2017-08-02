@@ -167,6 +167,7 @@ function play(){
   Player.bid = [];
   Player.click = 0;
   begin();
+
 }
 
 
@@ -218,6 +219,8 @@ function resetInput(){
   Card.input.reset();
 }
 
+
 document.getElementById('bank').innerHTML = Player.bank;
 document.getElementById('gambler').innerHTML = gambler;
+
 Card.input.addEventListener('submit',addBet);
