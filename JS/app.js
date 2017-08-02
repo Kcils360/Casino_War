@@ -164,7 +164,7 @@ function play(){
 }
 
 function updateBank(){
-  document.getElementById('bank').innerHTML = Player.bank;
+  document.getElementById('bank').innerHTML = '$' + Player.bank;
 }
 
 
@@ -198,7 +198,6 @@ function updatePlayer(){
 function resetInput(){
   Card.input.reset();
 }
-
 
 Card.input.addEventListener('submit',addBet);
 // Card.input.addEventListener('click',play);
