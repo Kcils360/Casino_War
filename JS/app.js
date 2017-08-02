@@ -48,7 +48,7 @@ if(localStorage.deck || localStorage.deck === ''){
 
   Card.deck = JSON.parse(localStorage.getItem('deck'));
   Player.bank = JSON.parse(localStorage.getItem('bank'));
-  updatePlayer();
+  // updatePlayer();
 
 } else{
   for(var j = 0; j < 4; j++){
@@ -114,8 +114,9 @@ function play(){
     return;
   }
 
-  updatePlayer();
+  // updatePlayer();
   Card.onTable = [];
+  Player.bid = [];
   begin();
 
 }
@@ -142,10 +143,10 @@ function randomCard(){
 }
 
 
-function updatePlayer(){
-  localStorage.setItem('deck',JSON.stringify(Card.deck));
-  localStorage.setItem('bank',JSON.stringify(Player.bank));
-}
+// function updatePlayer(){
+//   localStorage.setItem('deck',JSON.stringify(Card.deck));
+//   localStorage.setItem('bank',JSON.stringify(Player.bank));
+// }
 
 function cardFlipper() {
   var x = document.getElementById('flip');

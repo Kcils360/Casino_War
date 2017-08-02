@@ -73,6 +73,11 @@ form{
   width: 250px;
 }
 
+.quit {
+  float: right;
+  
+}
+
 /*/------card flip--------------*/
 
 .flip_container{
