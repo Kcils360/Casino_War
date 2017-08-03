@@ -17,12 +17,12 @@ nav a {
   float: right;
   font-size: 30px;
   font-family: 'Limelight', cursive;
-  color: #180B05;
+  color: #E6FFB0;
   text-decoration: none;
 }
 
 a:hover {
-  color: #E6FFB0;
+  color: #9A0000;
 }
 
 a:active {
@@ -52,7 +52,7 @@ div {
   width: 300px;
   height: 300px;
   margin: 0px 3%;
-  color: #180B05;
+  color: #E6FFB0;
   font-size: 25px;
   vertical-align: middle;
 }
