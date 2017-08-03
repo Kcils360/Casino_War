@@ -3,10 +3,6 @@
   src: url("../fonts/CoffeeTin Initials.ttf");
 }
 
-/** {
-  color: black;
- border: 2px solid black;
-}*/
 html{
 background-image: url(../img/greenFelt.jpg);
 
@@ -15,59 +11,110 @@ background-image: url(../img/greenFelt.jpg);
 header h1 {
     border: 2px solid #9A0000;
     border-radius: 50px;
-    margin: 50px 17% 40px 17%;
+    width: 500px;
+    margin: 0 auto;
     text-align: center;
     font-family: 'CoffeeTin', sans-serif;
     font-weight: lighter;
-    font-size: 100px;
+    font-size: 50px;
     color: #B14B00;
     background-color: #180B05;
 }
 
 #dealer{
+  width: 200px;
+  float: right;
+  margin-right: calc(25% - 100px);
+  font-family: 'Limelight', cursive;
+  font-size: 40px;
+  color: #180B05;
   text-align: center;
 }
 
 #allCard{
   display: inline-block;
-  margin-left: 330px;
+  width: 1020px;
+  height: 232px;
+  margin-left: calc(50% - 500px);
+  text-align: center;
 }
 
-
-section img{
-  height: 150px;
-  width: 105px;
+#allCard img{
+  height: 230px;
+  width: 155px;
   margin-bottom: 10px;
+  margin: 0px 5px 0px 5px;
+
 }
 
+#allCard ul {
+  padding: 0px;
+  width: 1020px;
+  margin-top: 0px;
+  margin-left: 8%;
+  font-family: 'Limelight', cursive;
+}
+
+#allCard li {
+  position: relative;
+  width: 170px;
+  text-align: center;
+
+}
 
 #dealer_img{
   display: block;
-  margin: 0 auto;
+  float: right;
+  margin-right: 13.3%;
+  margin-top: 20px;
   margin-bottom: 15px;
-  height: 240px;
-  width: 170px;
+  height: 230px;
+  width: 155px;
 
 }
+
+#gambler {
+  margin-top: 18px;
+  margin-bottom: 0px;
+  font-family: 'Limelight', cursive;
+  font-size: 40px;
+  color: #180B05;
+  text-align: center;
+}
+
 
 
 h2{
   color:#E6FFB0;
 }
 form{
-  position: relative;
-  top: 110px;
-  width: 250px;
+  float: left;
+  margin-left: 3%;
+  width: 340px;
+  height: 100px;
+  border: 2px solid #9A0000;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(24,11,5,.65);
+  font-family: 'Limelight', cursive;
+  font-size: 30px;
+  color: #E6FFB0;
 }
+
+input {
+  height: 25px;
+  width: 150px;
+  background-color: #E6FFB0;
+  font-family: 'Limelight', cursive;
+  font-size: 20px;
+  color: #180B05;
+}
+
 label{
   color: #E6FFB0;
   font-size: 25px;
 }
 
-.quit {
-  float: right;
-  margin-right: 40px;
-}
 .card-label{
   position: relative;
   top: 15px;
@@ -78,23 +125,93 @@ label{
   font-size: 25px;
 }
 #current-bank{
-  width: 150px;
-  position: absolute;
-  left: 70px;
-  top: 200px;
+  font-family: 'Limelight', cursive;
+  font-size: 40px;
+  width: 350px;
+  position: relative;
+  margin-left: 5%;
 }
 #bank{
-  position: absolute;
-  left: 80px;
-  top: 230px;
+  font-family: Times, serif;
+  font-weight: lighter;
+  font-size: 65px;
+  color: #B14B00;
+  position: relative;
+  margin-left: 5%;
+  margin-top: 0px;
 }
-#play-button{
-  position: absolute;
-  top: 710px;
-  right: 1200px;
+
+#button {
+  width: 150px;
+  height: 50;
+  background-color: #B14B00;
+  font-family: 'Limelight', cursive;
+  color:  #180B05;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
 }
-#username{
-  text-align: center;
-  font-size: 20px;
-  color: #E6FFB0
+
+#button:hover {
+  background-color: #9A0000;
+}
+
+#play-button {
+  width: 350px;
+  height: 60px;
+  position: relative;
+  margin-left: calc(24% - 175px);
+  margin-top: 60px;
+  background-color: #180B05;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: 100;
+  font-size: 45px;
+  color: #B14B00;
+  border-radius: 30px;
+  border-color: #9A0000;
+}
+
+#play-button:hover {
+  background-color: #182803;
+  color: #E6FFB0;
+  border-color: #B14B00;
+}
+
+#play-button:active {
+  background-color: #9A0000;
+  color: #180B05;
+  border-color: #B14B00;
+}
+
+.buttons {
+  height: 140px;
+  width: 175px;
+  float: right;
+  margin-right: 17%
+}
+
+.quit {
+  display: block;
+  margin-bottom: 30px;
+  width: 150px;
+  height: 50;
+  background-color: #B14B00;
+  font-family: 'Limelight', cursive;
+  color:  #180B05;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+}
+
+
+.again {
+  display: block;
+  width: 150px;
+  height: 50;
+  background-color: #B14B00;
+  font-family: 'Limelight', cursive;
+  color:  #180B05;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
 }

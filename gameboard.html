@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Casino War</title>
     <link href="CSS/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -15,58 +16,42 @@
 
       <img id="dealer_img" src="" alt="Playing Card" />
 
-
-
-      <form id = "form">
-        <fieldset>
-
-          <label for="bid">Place Bet $: </label>
-          <input name="bid" type="text" required/>
-          <button id = "button">SUBMIT BET</button>
-
-
-        </fieldset>
-      </form>
-
-<section id = "allCard">
-        <img id="card1" src="" />
-        <p id="b0" class="card-label"></p>
-        <img id="card2" src="" />
-        <p id="b1" class="card-label"></p>
-        <img id="card3" src="" />
-        <p id="b2" class="card-label"></p>
-        <img id="card4" src="" />
-        <p id="b3" class="card-label"></p>
-        <img id="card5" src="" />
-        <p id="b4" class="card-label"></p>
-
-      </section>
-
-
       <h2 id="current-bank">Current Bank</h2>
       <h2 id = "bank"></h2>
 
 
 
-
-      <button id="play-button" onclick = "play()">CLICK ME TO PLAY </button>
-
-      <button class="quit" onclick="location.href='index.html';" />RAAAAAGE QUIT</button>
-
-
-      <section >
-
-        <h2 id="gambler"></h2>
-
+      <section id = "allCard">
+        <img id="card1" src="" />
+        <img id="card2" src="" />
+        <img id="card3" src="" />
+        <img id="card4" src="" />
+        <img id="card5" src="" />
+        <ul>
+          <li id="b0" class="card-label"></li>
+          <li id="b1" class="card-label"></li>
+          <li id="b2" class="card-label"></li>
+          <li id="b3" class="card-label"></li>
+          <li id="b4" class="card-label"></li>
+        </ul>
       </section>
 
-      <button onclick ="play()">CLICK ME TO PLAY </button>
-
-      <button onclick="reset()">Play again!</button>
-
-        <button onclick = "reset()"> RESET </button>
+      <h2 id="gambler"></h2>
 
 
-    <script src="JS/app.js"></script>
-  </body>
-</html>
+      <form id = "form">
+
+          <label for="bid">Place Bet $: </label>
+          <input name="bid" type="text" required/>
+          <button id = "button">Bet Per Card</button>
+
+      </form>
+
+      <button id="play-button" onclick = "play()">PLAY</button>
+        <section class="buttons">
+          <button class="quit" onclick="location.href='index.html';" />RAAAAAGE QUIT</button>
+          <button class="again" onclick="reset()">Play again!</button>
+        </section>
+      <script src="JS/app.js"></script>
+    </body>
+    </html>
