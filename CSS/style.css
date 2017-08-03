@@ -56,17 +56,27 @@ h2{
 }
 form{
   float: left;
-  margin-left: 5%;
-  width: 300px;
-  height: 150px;
+  margin-left: 3%;
+  width: 340px;
+  height: 100px;
   border: 2px solid #9A0000;
   border-radius: 10px;
   padding: 10px;
   background-color: rgba(24,11,5,.65);
-  font-family: Garamond;
+  font-family: 'Limelight', cursive;
   font-size: 30px;
   color: #E6FFB0;
 }
+
+input {
+  height: 25px;
+  width: 150px;
+  background-color: #E6FFB0;
+  font-family: 'Limelight', cursive;
+  font-size: 20px;
+  color: #180B05;
+}
+
 label{
   color: #E6FFB0;
   font-size: 25px;
@@ -100,6 +110,21 @@ label{
   position: relative;
   margin-left: 5%;
   margin-top: 0px;
+}
+
+#button {
+  width: 150px;
+  height: 50;
+  background-color: #B14B00;
+  font-family: 'Limelight', cursive;
+  color:  #180B05;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+}
+
+#button:hover {
+  background-color: #9A0000;
 }
 
 #play-button {
