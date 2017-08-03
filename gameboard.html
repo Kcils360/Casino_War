@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Casino War</title>
-    <link href="CSS/style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <h1>Casino War</h1>
-    </header>
-    <h2 id="dealer">Dealer</h2>
+<head>
+  <meta charset="utf-8">
+  <title>Casino War</title>
+  <link href="CSS/style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+</head>
 
-    <img id=cardsLeft src="img/cardBack.png" alt="playing card" />
-    <p id="cardsRemaining">Cards Remaining</p>
-    <p id="remaining">20</p>
+<body>
+  <header>
+    <h1>Casino War</h1>
+  </header>
+  <h2 id="dealer">Dealer</h2>
 
-        <!-- <img id="card_back" src="img/cardBack.png" alt="card_back" /> -->
+  <img id=cardsLeft src="img/cardBack.png" alt="playing card" />
+  <p id="cardsRemaining">Cards Remaining</p>
+  <p id="remaining">20</p>
 
-      <img id="dealer_img" src="" alt="Playing Card" />
+  <img id="dealer_img" src="" alt="Playing Card" />
 
-      <h2 id="current-bank">Current Bank</h2>
-      <h2 id = "bank"></h2>
+  <h2 id="current-bank">Current Bank</h2>
+  <h2 id="bank"></h2>
 
+  <section id="allCard">
+    <img id="card1" src="" />
+    <img id="card2" src="" />
+    <img id="card3" src="" />
+    <img id="card4" src="" />
+    <img id="card5" src="" />
+    <ul>
+      <li id="b0" class="card-label"></li>
+      <li id="b1" class="card-label"></li>
+      <li id="b2" class="card-label"></li>
+      <li id="b3" class="card-label"></li>
+      <li id="b4" class="card-label"></li>
+    </ul>
+  </section>
 
+  <h2 id="gambler"></h2>
 
-      <section id = "allCard">
-        <img id="card1" src="" />
-        <img id="card2" src="" />
-        <img id="card3" src="" />
-        <img id="card4" src="" />
-        <img id="card5" src="" />
-        <ul>
-          <li id="b0" class="card-label"></li>
-          <li id="b1" class="card-label"></li>
-          <li id="b2" class="card-label"></li>
-          <li id="b3" class="card-label"></li>
-          <li id="b4" class="card-label"></li>
-        </ul>
-      </section>
+  <form id="form">
 
-      <h2 id="gambler"></h2>
+    <label for="bid">Place Bet $: </label>
+    <input name="bid" type="text" required/>
+    <button id="button">Bet Per Card</button>
 
+  </form>
 
-      <form id = "form">
+  <button id="play-button" onclick="play()">PLAY</button>
 
-          <label for="bid">Place Bet $: </label>
-          <input name="bid" type="text" required/>
-          <button id = "button">Bet Per Card</button>
+  <section class="buttons">
+    <button class="quit" onclick="location.href='index.html';" />RAAAAAGE QUIT</button>
+    <button class="again" onclick="reset()">New Deck</button>
+  </section>
 
-      </form>
-
-      <button id="play-button" onclick = "play()">PLAY</button>
-        <section class="buttons">
-          <button class="quit" onclick="location.href='index.html';" />RAAAAAGE QUIT</button>
-          <button class="again" onclick="reset()">New Deck</button>
-        </section>
-      <script src="JS/app.js"></script>
-    </body>
-    </html>
+  <script src="JS/app.js"></script>
+</body>
+</html>

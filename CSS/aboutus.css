@@ -9,15 +9,13 @@ html {
   background-attachment: fixed;
 }
 
-nav{
+nav {
   background-color: #180B05;
   border: 2px solid #9A0000;
   border-radius: 25px;
   width: 400px;
-  /*position: fixed;*/
   margin-top: 30px;
-  margin-left: 73%;
-  z-index: 1;
+  margin-left: 68%;
 }
 
 a {
@@ -32,8 +30,7 @@ a:hover {
   color: #B14B00;
 }
 
-
-#title{
+#title {
   text-align: center;
   color: #B14B00;
   font-family: 'CoffeeTin', sans-serif;
@@ -46,11 +43,7 @@ a:hover {
   z-index: 3;
 }
 
-.gh {
-  z-index: 3;
-}
-
-.person{
+.person {
   font-weight: lighter;
   font-family: 'CoffeeTin', sans-serif;
   font-size: 60px;
@@ -59,18 +52,20 @@ a:hover {
   border-radius: 60px;
   border: 2px solid #B14B00
 }
-p{
+
+p {
   color: white;
   font-size: 20px;
 }
 
-img{
+img {
   display: block;
   margin: auto;
   height: 400px;
   width: 400px;
 }
-section{
+
+section {
   width: 40%;
 }
 
@@ -86,26 +81,32 @@ section{
   color: #2980b9;
 }
 
-#greg{
+#greg {
   display: inline-block;
 }
-#han{
+
+#han {
   display: inline-block;
   margin-left: 50px;
 }
-#duane{
+
+#duane {
   margin: 0 auto;
   text-align: center;
 }
-div{
+
+div {
   text-align: center;
+  */
 }
+
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;
 }
+
 /* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper{
+.flip-container:hover .flipper, .flip-container.hover .flipper {
   transform: rotateY(180deg);
 }
 
@@ -113,12 +114,14 @@ div{
   width: 400px;
   height: 400px;
 }
+
 /* flip speed goes here */
-.flipper{
+.flipper {
   transition: 1.0s;
   transform-style: preserve-3d;
   position: relative;
 }
+
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
@@ -126,17 +129,20 @@ div{
   top: 0;
   left: 0;
 }
+
 /* front pane, placed above back */
 .front {
   z-index: 2;
   transform: rotateY(0deg);
 }
+
 /* back, initially hidden pane */
-.back{
+.back {
   transform: rotateY(180deg);
   color: #E6FFB0;
   background-color: #180B05;
 }
-.flip-container{
+
+.flip-container {
   margin: 0 auto;
 }

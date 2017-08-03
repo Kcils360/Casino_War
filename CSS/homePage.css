@@ -23,12 +23,11 @@ nav a {
 }
 
 a:hover {
-  color: #E6FFB0;
+  color: #9A0000 ;
 }
-
-a:active {
+a:active{
   text-decoration: underline;
-  color: #B14B00;
+  background-color: #B14B00;
 }
 
 .title {
@@ -62,10 +61,6 @@ div {
   font-size: 40px;
 }
 
-.name p {
-  margin-bottom: 0px;
-}
-
 .name input {
   font-size: 25px;
   font-family: inherit;
@@ -85,28 +80,6 @@ div {
   margin-top: 0px;
   font-size: 35px;
   color: #E6FFB0;
-}
-
-.welcome ul {
-  font-size: 35px;
-  list-style: none;
-  padding-right: 40px;
-  padding-left: 30px;
-}
-
-.bid {
-  font-size: 40px;
-  color: black;
-}
-
-.min {
-  font-size: 20px;
-  margin: 0px;
-
-}
-
-footer {
-  position: relative;
 }
 
 #continue {
