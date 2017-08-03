@@ -9,6 +9,8 @@ Card.order = ['2','3','4','5','6','7','8','9','10','jack','queen','king','ace'];
 Player.click = 0;
 Player.bid = [];
 Player.bank = 0;
+var cheapItem = ['tshirt','t-shirt','cloth','pen','waterbottle','wallet','headphone','earphone'];
+var valueItem = ['laptop','watch','ring','earing','iphone','macbook','phone'];
 var gambler;
 var dealerHand;
 var playerHand;
@@ -39,7 +41,7 @@ function getLocal(){
     Card.deck = JSON.parse(localStorage.getItem('deck'));
   } else{
     if(localStorage.deckNum || localStorage.deckNum === ''){
-      for(var d = 0; d < parseInt(localStorage.getItem('deckNum')) + 1; d++){
+      for(var d = 0; d < parseInt(localStorage.getItem('deckNum')); d++){
         makeDeck();
       }
       localStorage.removeItem('deckNum');
@@ -70,6 +72,10 @@ function getLocal(){
 
 function begin(){
   dealerHand = randomCard();
+
+  while(dealerHand.num < 5){
+    dealerHand = randomCard();
+  }
   Card.deck.splice(randomIndex,1);
   Card.dealerImg.src = 'img/cardBack.png';
   for(var i = 0; i < 5; i++){
@@ -143,9 +149,15 @@ function play(){
       }
 
       while(dealerHand.num == x.num){
-        if(confirm('You are challenged to go to war on card # ' + (k + 1) )){
+        var war = prompt('You are challenged to go to war on card # ' + (k + 1) + '. Would you like to go to war?' ).toLowerCase();
+        while(!(war == 'y' || war == 'yes' || war == 'n' || war == 'no')){
+          alert('yes or no only!');
+          war = prompt('One more chance, yes or no?');
+        }
+
+        if(war == 'y' || war == 'yes'){
           Player.bid[k] *= 2;
-          alert('going to war on card #' + (k + 1) + ' Your bet for this card has been raised to: $ ' + Player.bid[k]);
+          alert('going to war on card #' + (k + 1) + '. Your bet for this card has been raised to: $ ' + Player.bid[k]);
           dealerHand = randomCard();
           Card.deck.splice(dealerHand,1);
           updateDeck();
@@ -173,8 +185,17 @@ function play(){
     }
 
     if(Player.bank <= 0){
-      alert('GAME OVER !!');
-      return;
+      alert('Looks like you are out of money!');
+      var pawn = prompt('Would you like to pawn a personel item of yours for money?').toLowerCase();
+      while(!(pawn == 'y' || pawn == 'yes' || pawn == 'n' || pawn == 'no')){
+        alert('yes or no only!');
+        pawn = prompt('One more chance, yes or no?').toLowerCase();
+      }
+      if(pawn == 'y' || pawn == 'yes'){
+        pawnShop();
+      } else{
+        return alert('You just got kick out of the Casino!');
+      }
     }
 
     Card.onTable = [];
@@ -201,6 +222,28 @@ function compare(card1,card2){
   return false;
 }
 
+function pawnShop(){
+  var pawnItem = prompt('Great! What do you have on you to pawn?').toLowerCase();
+  for(var p = 0; p < valueItem.length; p++){
+    if(pawnItem == valueItem[p]){
+      Player.bank = randomInt(50,100);
+      return alert('After estimating your ' + pawnItem + ' is worth $' + Player.bank);
+    } else if(pawnItem == cheapItem[p]){
+      Player.bank = randomInt(2,5);
+      return alert('After estimating your ' + pawnItem + ' is worth $' + Player.bank);
+    } else{
+      Player.bank = randomInt(5,10);
+      return alert('After estimating your ' + pawnItem + ' is worth $' + Player.bank);
+    }
+  }
+}
+
+
+function randomInt(min,max)
+{
+  return (Math.floor(Math.random() * (max - min + 1) + min)) * 10;
+}
+
 
 function randomCard(){
   randomIndex = Math.floor(Math.random() * Card.deck.length);
@@ -225,7 +268,6 @@ function updateDeck(){
 
 function reset(){
   localStorage.removeItem('deck');
-  localStorage.removeItem('bank');
   getLocal();
   begin();
 }
@@ -233,6 +275,9 @@ function reset(){
 function resetInput(){
   Card.input.reset();
 }
+
+
+
 
 function makeDeck(){
   for(var j = 0; j <= 3; j++){
