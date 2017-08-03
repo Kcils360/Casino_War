@@ -3,10 +3,6 @@
   src: url("../fonts/CoffeeTin Initials.ttf");
 }
 
-/** {
-  color: black;
- border: 2px solid black;
-}*/
 html{
 background-image: url(../img/greenFelt.jpg);
 
@@ -25,6 +21,9 @@ header h1 {
 }
 
 #dealer{
+  font-family: 'Limelight', cursive;
+  font-size: 40px;
+  color: #180B05;
   text-align: center;
 }
 
@@ -43,7 +42,8 @@ section img{
 
 #dealer_img{
   display: block;
-  margin: 0 auto;
+  float: right;
+  margin-right: calc(50% - 85px);
   margin-bottom: 15px;
   height: 240px;
   width: 170px;
@@ -55,9 +55,17 @@ h2{
   color:#E6FFB0;
 }
 form{
-  position: relative;
-  top: 110px;
-  width: 250px;
+  float: left;
+  margin-left: 5%;
+  width: 300px;
+  height: 150px;
+  border: 2px solid #9A0000;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(24,11,5,.65);
+  font-family: Garamond;
+  font-size: 30px;
+  color: #E6FFB0;
 }
 label{
   color: #E6FFB0;
@@ -78,23 +86,52 @@ label{
   font-size: 25px;
 }
 #current-bank{
-  width: 150px;
-  position: absolute;
-  left: 70px;
-  top: 200px;
+  font-family: 'Limelight', cursive;
+  font-size: 40px;
+  width: 350px;
+  position: relative;
+  margin-left: 5%;
 }
 #bank{
-  position: absolute;
-  left: 80px;
-  top: 230px;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: lighter;
+  font-size: 65px;
+  color: #B14B00;
+  position: relative;
+  margin-left: 5%;
+  margin-top: 0px;
 }
-#play-button{
-  position: absolute;
-  top: 710px;
-  right: 1200px;
+
+#play-button {
+  width: 350px;
+  height: 60px;
+  position: relative;
+  margin-left: calc(15% - 175px);
+  margin-top: 80px;
+  background-color: #180B05;
+  font-family: 'CoffeeTin', sans-serif;
+  font-weight: 100;
+  font-size: 45px;
+  color: #B14B00;
+  border-radius: 30px;
+  border-color: #9A0000;
 }
-#username{
+
+#play-button:hover {
+  background-color: #182803;
+  color: #E6FFB0;
+  border-color: #B14B00;
+}
+
+#play-button:active {
+  background-color: #9A0000;
+  color: #180B05;
+  border-color: #B14B00;
+}
+
+#gambler{
+  font-family: 'Limelight', cursive;
+  font-size: 40px;
+  color: #180B05;
   text-align: center;
-  font-size: 20px;
-  color: #E6FFB0
 }

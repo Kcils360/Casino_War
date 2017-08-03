@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Casino War</title>
     <link href="CSS/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -15,18 +16,10 @@
 
       <img id="dealer_img" src="" alt="Playing Card" />
 
+      <h2 id="current-bank">Current Bank</h2>
+      <h2 id = "bank"></h2>
 
 
-      <form id = "form">
-        <fieldset>
-
-          <label for="bid">Place Bet $: </label>
-          <input name="bid" type="text" required/>
-          <button id = "button">SUBMIT BET</button>
-
-
-        </fieldset>
-      </form>
 
 <section id = "allCard">
         <img id="card1" src="" />
@@ -39,28 +32,31 @@
         <p id="b3" class="card-label"></p>
         <img id="card5" src="" />
         <p id="b4" class="card-label"></p>
-
       </section>
 
+      <h2 id="gambler"></h2>
 
-      <h2 id="current-bank">Current Bank</h2>
-      <h2 id = "bank"></h2>
+      <form id = "form">
+        <fieldset>
+          <label for="bid">Place Bet $: </label>
+          <input name="bid" type="text" required/>
+          <button id = "button">SUBMIT BET</button>
+        </fieldset>
+      </form>
 
 
 
 
-      <button id="play-button" onclick = "play()">CLICK ME TO PLAY </button>
+
+
+      <button id="play-button" onclick = "play()">PLAY</button>
 
       <button class="quit" onclick="location.href='index.html';" />RAAAAAGE QUIT</button>
 
 
-      <section >
 
-        <h2 id="gambler"></h2>
 
-      </section>
 
-      <button onclick = "play()">CLICK ME TO PLAY </button>
 
       <button onclick="reset()">Play again!</button>
 
