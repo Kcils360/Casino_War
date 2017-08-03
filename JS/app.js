@@ -55,10 +55,16 @@ function getLocal(){
   }
   updateBank();
 }
-
-
 (function getName(){
-  if(localStorage.gambler || localStorage.gambler === ''){
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// if(localStorage.gambler.length < 1){
+//   gambler = 'Guest';
+// }else {
+//   document.getElementById('gambler').textContent = gambler;
+// }
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  if(localStorage.gambler.length > 0){
     gambler = localStorage.getItem('gambler');
   } else{
     gambler = 'Guest Player';
