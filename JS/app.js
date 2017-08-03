@@ -20,8 +20,6 @@ Card.section = document.getElementById('imgSection');
 Card.input = document.getElementById('form');
 
 
-
-
 function Card(num,color){
   this.num = num;
   this.color = color;
@@ -54,7 +52,7 @@ function getLocal(){
   updateBank();
 }
 
-function getName(){
+(function getName(){
   if(localStorage.gambler || localStorage.gambler === ''){
     gambler = localStorage.getItem('gambler');
   } else{
@@ -62,20 +60,19 @@ function getName(){
     updateName();
   }
   document.getElementById('gambler').innerHTML = gambler;
-}
+})();
 
-getName();
-getLocal();
-begin();
 
 function begin(){
   dealerHand = randomCard();
-  Card.deck.splice(randomIndex,1);
   Card.dealerImg.src = dealerHand.source;
+  Card.deck.splice(randomIndex,1);
   for(var i = 0; i < 5; i++){
     var j = i + 1;
     document.getElementById('card' + j).src = 'img/cardBack.png';
+    document.getElementById('b' + i).innerHTML = 'Card #: ' + j;
   }
+
   updateBank();
 }
 
@@ -103,8 +100,12 @@ function addBet(e){
     return alert('Credit is no good! CASH ONLY!');
   }
 
-
   Player.bid.push(parseInt(chip));
+
+  for(var i = 0; i < Player.bid.length; i++){
+    document.getElementById('b' + i).innerHTML = 'Bidding: $' + Player.bid[i];
+  }
+
   Player.bank -= chip;
   Player.click ++;
   playerHand = randomCard();
@@ -118,6 +119,7 @@ function addBet(e){
 
 
 function play(){
+
   for(var k = 0; k < Card.onTable.length; k++){
     var x = Card.onTable[k];
 
@@ -215,10 +217,12 @@ function reset(){
   begin();
 }
 
-
 function resetInput(){
   Card.input.reset();
 }
+
+getLocal();
+begin();
 
 
 document.getElementById('bank').innerHTML = Player.bank;
