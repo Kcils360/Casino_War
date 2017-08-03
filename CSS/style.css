@@ -65,7 +65,7 @@ header h1 {
 #dealer_img{
   display: block;
   float: right;
-  margin-right: 10%;
+  margin-right: 13.3%;
   margin-top: 20px;
   margin-bottom: 15px;
   height: 230px;
@@ -76,7 +76,12 @@ header h1 {
 #gambler {
   margin-top: 18px;
   margin-bottom: 0px;
+  font-family: 'Limelight', cursive;
+  font-size: 40px;
+  color: #180B05;
+  text-align: center;
 }
+
 
 
 h2{
@@ -110,10 +115,6 @@ label{
   font-size: 25px;
 }
 
-.quit {
-  float: right;
-  margin-right: 40px;
-}
 .card-label{
   position: relative;
   top: 15px;
@@ -131,7 +132,7 @@ label{
   margin-left: 5%;
 }
 #bank{
-  font-family: 'CoffeeTin', sans-serif;
+  font-family: Times, serif;
   font-weight: lighter;
   font-size: 65px;
   color: #B14B00;
@@ -159,7 +160,7 @@ label{
   width: 350px;
   height: 60px;
   position: relative;
-  margin-left: calc(18% - 175px);
+  margin-left: calc(24% - 175px);
   margin-top: 60px;
   background-color: #180B05;
   font-family: 'CoffeeTin', sans-serif;
@@ -182,9 +183,35 @@ label{
   border-color: #B14B00;
 }
 
-#gambler{
+.buttons {
+  height: 140px;
+  width: 175px;
+  float: right;
+  margin-right: 17%
+}
+
+.quit {
+  display: block;
+  margin-bottom: 30px;
+  width: 150px;
+  height: 50;
+  background-color: #B14B00;
   font-family: 'Limelight', cursive;
-  font-size: 40px;
-  color: #180B05;
-  text-align: center;
+  color:  #180B05;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+}
+
+
+.again {
+  display: block;
+  width: 150px;
+  height: 50;
+  background-color: #B14B00;
+  font-family: 'Limelight', cursive;
+  color:  #180B05;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
 }
