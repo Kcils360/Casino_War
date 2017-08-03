@@ -101,40 +101,6 @@ div {
   font-size: 80px;
 }
 
-.bet h6 {
-  margin: 0px;
-  font-size: 20px;
-  text-align: left;
-  padding-left: 63px;
-
-}
-
-.bet ul {
-  list-style: none;
-  padding-left: 0px;
-  padding-right: 30px;
-  margin-top: 25px;
-}
-
-.bet li {
-  display: inline;
-}
-
-.bet input {
-  font-size: 50px;
-  font-family: inherit;
-  width: 150px;
-  background-color: #E6FFB0;
-  color: #182803;
-  border-radius: 7px;
-  padding-left: 10px;
-}
-
-
-footer {
-  position: relative;
-}
-
 #play {
   width: 350px;
   height: 60px;
@@ -160,4 +126,12 @@ footer {
   background-color: #9A0000;
   color: #180B05;
   border-color: #B14B00;
+}
+#deckNum{
+  font-size: 20px;
+  width: 20%;
+  height: 15%;
+  margin-top: 2%;
+  background-color: #E6FFB0;
+  border: 2px solid #9A0000;
 }
