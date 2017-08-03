@@ -9,8 +9,9 @@ Card.order = ['2','3','4','5','6','7','8','9','10','jack','queen','king','ace'];
 Player.click = 0;
 Player.bid = [];
 Player.bank = 0;
-var cheapItem = ['tshirt','t-shirt','cloth','pen','waterbottle','wallet','headphone','earphone'];
-var valueItem = ['laptop','watch','ring','earing','iphone','macbook','phone'];
+var cheapItem = ['tshirt','shirt','cloth','pen','waterbottle','wallet','sunglasses','glasses','shoe'];
+var valueItem = ['laptop','watch','ring','earing','iphone','macbook','phone','car','carkey'];
+var invalueItem = ['home','child','dog','son','daughter','life','moral-standard','humor','luck'];
 var gambler;
 var dealerHand;
 var playerHand;
@@ -58,13 +59,6 @@ function getLocal(){
   updateBank();
 }
 (function getName(){
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// if(localStorage.gambler.length < 1){
-//   gambler = 'Guest';
-// }else {
-//   document.getElementById('gambler').textContent = gambler;
-// }
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   if(localStorage.gambler.length > 0){
     gambler = localStorage.getItem('gambler');
@@ -97,6 +91,7 @@ function begin(){
 function addBet(e){
   e.preventDefault();
   var chip = e.target.bid.value;
+
   if(Card.deck.length == 0){
     alert('Ran out of card, shuffle to restart!');
     return;
@@ -140,6 +135,7 @@ function addBet(e){
 
 function play(){
   Card.dealerImg.src = dealerHand.source;
+
   setTimeout(function() {
     alert('Dealer has shown his card!');
 
@@ -162,25 +158,31 @@ function play(){
         }
 
         if(war == 'y' || war == 'yes'){
-          Player.bid[k] *= 2;
-          alert('going to war on card #' + (k + 1) + '. Your bet for this card has been raised to: $ ' + Player.bid[k]);
-          dealerHand = randomCard();
-          Card.deck.splice(dealerHand,1);
-          updateDeck();
-          alert('Dealer is now holding a new card: ' + Card.order[(dealerHand.num) - 2] + ' of ' + dealerHand.color);
-          Card.dealerImg.src = dealerHand.source;
-          Card.onTable[k] = randomCard();
-          Card.deck.splice(Card.onTable[k],1);
-          alert('You are now holding a new card: ' + Card.order[(Card.onTable[k].num) - 2] + ' of ' + Card.onTable[k].color);
-          updateDeck();
-          renderTable();
+          if(Player.bank <= (Player.bid[k] * 2)){
+            x.num = null;
+            alert('Going to war requires doubling your bet, which you do not have money for!');
+            alert('You lost $' + Player.bid[k] + ' on card #' + (k + 1));
+          } else{
+            Player.bid[k] *= 2;
+            alert('going to war on card #' + (k + 1) + ' Your bet for this card has been raised to: $ ' + Player.bid[k]);
+            dealerHand = randomCard();
+            Card.deck.splice(dealerHand,1);
+            updateDeck();
+            alert('Dealer is now holding a new card: ' + Card.order[(dealerHand.num) - 2] + ' of ' + dealerHand.color);
+            Card.dealerImg.src = dealerHand.source;
+            Card.onTable[k] = randomCard();
+            Card.deck.splice(Card.onTable[k],1);
+            alert('You are now holding a new card: ' + Card.order[(Card.onTable[k].num) - 2] + ' of ' + Card.onTable[k].color);
+            updateDeck();
+            renderTable();
 
-          if(compare(dealerHand,Card.onTable[k])){
-            alert('You LOST $' + Player.bid[k] + ' on card #' + (k + 1));
-          } else if(compare(Card.onTable[k],dealerHand)){
-            Player.bank += (2 * Player.bid[k]);
-            alert('You WON $' + Player.bid[k] + ' on card #' + (k + 1));
-            updateBank();
+            if(compare(dealerHand,Card.onTable[k])){
+              alert('You LOST $' + Player.bid[k] + ' on card #' + (k + 1));
+            } else if(compare(Card.onTable[k],dealerHand)){
+              Player.bank += (2 * Player.bid[k]);
+              alert('You WON $' + Player.bid[k] + ' on card #' + (k + 1));
+              updateBank();
+            }
           }
         } else{
           x.num = null;
@@ -209,7 +211,7 @@ function play(){
     Player.click = 0;
     setTimeout(function(){
       begin();
-    },3000);
+    },2000);
   }, 2000);
 }
 
@@ -230,18 +232,20 @@ function compare(card1,card2){
 
 function pawnShop(){
   var pawnItem = prompt('Great! What do you have on you to pawn?').toLowerCase();
-  for(var p = 0; p < valueItem.length; p++){
+  for(var p = 0; p < invalueItem.length; p++){
     if(pawnItem == valueItem[p]){
       Player.bank = randomInt(50,100);
       return alert('After estimating your ' + pawnItem + ' is worth $' + Player.bank);
     } else if(pawnItem == cheapItem[p]){
       Player.bank = randomInt(2,5);
       return alert('After estimating your ' + pawnItem + ' is worth $' + Player.bank);
-    } else{
-      Player.bank = randomInt(5,10);
-      return alert('After estimating your ' + pawnItem + ' is worth $' + Player.bank);
+    } else if(pawnItem == invalueItem[p]){
+      Player.bank = randomInt(3000,10000);
+      return alert(pawnItem + '!? Okay, here is $' + Player.bank);
     }
   }
+  Player.bank = randomInt(5,10);
+  return alert('After estimating your ' + pawnItem + ' is worth $' + Player.bank);
 }
 
 
@@ -268,6 +272,7 @@ function updateName(){
 
 
 function updateDeck(){
+  document.getElementById('remaining').innerHTML = Card.deck.length;
   localStorage.setItem('deck',JSON.stringify(Card.deck));
 }
 
@@ -281,8 +286,6 @@ function reset(){
 function resetInput(){
   Card.input.reset();
 }
-
-
 
 
 function makeDeck(){
