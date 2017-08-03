@@ -11,16 +11,20 @@ background-image: url(../img/greenFelt.jpg);
 header h1 {
     border: 2px solid #9A0000;
     border-radius: 50px;
-    margin: 50px 17% 40px 17%;
+    width: 500px;
+    margin: 0 auto;
     text-align: center;
     font-family: 'CoffeeTin', sans-serif;
     font-weight: lighter;
-    font-size: 100px;
+    font-size: 50px;
     color: #B14B00;
     background-color: #180B05;
 }
 
 #dealer{
+  width: 200px;
+  float: right;
+  margin-right: calc(25% - 100px);
   font-family: 'Limelight', cursive;
   font-size: 40px;
   color: #180B05;
@@ -29,25 +33,49 @@ header h1 {
 
 #allCard{
   display: inline-block;
-  margin-left: 330px;
+  width: 1020px;
+  height: 232px;
+  margin-left: calc(50% - 500px);
+  text-align: center;
 }
 
-
-section img{
-  height: 150px;
-  width: 105px;
+#allCard img{
+  height: 230px;
+  width: 155px;
   margin-bottom: 10px;
+  margin: 0px 5px 0px 5px;
+
 }
 
+#allCard ul {
+  padding: 0px;
+  width: 1020px;
+  margin-top: 0px;
+  margin-left: 8%;
+  font-family: 'Limelight', cursive;
+}
+
+#allCard li {
+  position: relative;
+  width: 170px;
+  text-align: center;
+
+}
 
 #dealer_img{
   display: block;
   float: right;
-  margin-right: calc(50% - 85px);
+  margin-right: 10%;
+  margin-top: 20px;
   margin-bottom: 15px;
-  height: 240px;
-  width: 170px;
+  height: 230px;
+  width: 155px;
 
+}
+
+#gambler {
+  margin-top: 18px;
+  margin-bottom: 0px;
 }
 
 
@@ -131,8 +159,8 @@ label{
   width: 350px;
   height: 60px;
   position: relative;
-  margin-left: calc(15% - 175px);
-  margin-top: 80px;
+  margin-left: calc(18% - 175px);
+  margin-top: 60px;
   background-color: #180B05;
   font-family: 'CoffeeTin', sans-serif;
   font-weight: 100;
