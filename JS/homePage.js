@@ -13,6 +13,5 @@ if(typeof(input) == 'undefined' ){
   username = 'Guest Player';
 }
 
-
 localStorage.setItem('gambler', username);
 document.getElementById('continue').addEventListener('click', saveName);
