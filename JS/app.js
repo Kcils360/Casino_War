@@ -11,7 +11,7 @@ Player.bid = [];
 Player.bank = 0;
 var cheapItem = ['tshirt','shirt','cloth','pen','waterbottle','wallet','sunglasses','glasses','shoe'];
 var valueItem = ['laptop','watch','ring','earing','iphone','macbook','phone','car','carkey'];
-var invalueItem = ['home','child','dog','son','daughter','life','moral-standard','humor','luck'];
+var invalueItem = ['home','child','dog','son','daughter','life','wife','house','kid'];
 var gambler;
 var dealerHand;
 var playerHand;
@@ -58,6 +58,7 @@ function getLocal(){
   }
   updateBank();
 }
+
 (function getName(){
 
   if(localStorage.gambler.length > 0){
@@ -87,13 +88,12 @@ function begin(){
 }
 
 
-
 function addBet(e){
   e.preventDefault();
   var chip = e.target.bid.value;
 
   if(Card.deck.length == 0){
-    alert('Ran out of card, shuffle to restart!');
+    alert('Ran out of cards, click New Deck button for a new deck!');
     return;
   }
 
@@ -110,6 +110,7 @@ function addBet(e){
     resetInput();
     return alert('Max # of card to bet is 5!');
   }
+
   if(chip > (Player.bank)){
     resetInput();
     return alert('Credit is no good! CASH ONLY!');
