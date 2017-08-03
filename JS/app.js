@@ -95,6 +95,10 @@ function addBet(e){
     return alert('MUST BE A NUMBER!');
   }
 
+  if(parseInt(chip) < 10){
+    return alert('Minimum bet is $10!');
+  }
+
   if(Player.click > 4){
     resetInput();
     return alert('Max # of card to bet is 5!');
@@ -107,7 +111,7 @@ function addBet(e){
   Player.bid.push(parseInt(chip));
 
   for(var i = 0; i < Player.bid.length; i++){
-    document.getElementById('b' + i).innerHTML = 'Bidding: $' + Player.bid[i];
+    document.getElementById('b' + i).innerHTML = 'Bid: $' + Player.bid[i];
   }
 
   Player.bank -= chip;
