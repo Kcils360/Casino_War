@@ -34,6 +34,7 @@ function Player(name){
 
 function getLocal(){
   Card.deck = [];
+
   if(localStorage.deck || localStorage.deck === ''){
     Card.deck = JSON.parse(localStorage.getItem('deck'));
   } else{
@@ -46,6 +47,7 @@ function getLocal(){
       makeDeck();
     }
   }
+
   if(localStorage.bank || localStorage.bank === ''){
     Player.bank = parseInt(localStorage.getItem('bank'));
   } else{
@@ -53,6 +55,7 @@ function getLocal(){
   }
   updateBank();
 }
+
 
 (function getName(){
   if(localStorage.gambler || localStorage.gambler === ''){
