@@ -58,13 +58,6 @@ function getLocal(){
   updateBank();
 }
 (function getName(){
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// if(localStorage.gambler.length < 1){
-//   gambler = 'Guest';
-// }else {
-//   document.getElementById('gambler').textContent = gambler;
-// }
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   if(localStorage.gambler.length > 0){
     gambler = localStorage.getItem('gambler');
@@ -268,6 +261,7 @@ function updateName(){
 
 
 function updateDeck(){
+  document.getElementById('remaining').innerHTML = Card.deck.length;
   localStorage.setItem('deck',JSON.stringify(Card.deck));
 }
 
@@ -281,8 +275,6 @@ function reset(){
 function resetInput(){
   Card.input.reset();
 }
-
-
 
 
 function makeDeck(){
