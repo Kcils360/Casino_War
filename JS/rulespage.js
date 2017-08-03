@@ -11,5 +11,3 @@ function saveBet(e){
 }
 
 document.getElementById('play').addEventListener('click', saveBet);
-var betAmount = document.getElementById('betAmount').value;
-localStorage.setItem('deckNum', parseInt(betAmount));

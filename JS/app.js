@@ -95,8 +95,8 @@ function addBet(e){
     return alert('MUST BE A NUMBER!');
   }
 
-  if(parseInt(chip) < 10){
-    return alert('Minimum bet is $10!');
+  if(parseInt(chip) < 20){
+    return alert('Minimum bet is $20!');
   }
 
   if(Player.click > 4){
@@ -157,9 +157,9 @@ function play(){
           updateDeck();
           renderTable();
 
-          if(compare(dealerHand,x)){
+          if(compare(dealerHand,Card.onTable[k])){
             alert('You LOST $' + Player.bid[k] + ' on card #' + (k + 1));
-          } else if(compare(x,dealerHand)){
+          } else if(compare(Card.onTable[k],dealerHand)){
             Player.bank += (2 * Player.bid[k]);
             alert('You WON $' + Player.bid[k] + ' on card #' + (k + 1));
             updateBank();
@@ -208,7 +208,7 @@ function randomCard(){
 }
 
 function updateBank(){
-  document.getElementById('bank').innerHTML = Player.bank;
+  document.getElementById('bank').innerHTML = '$' + Player.bank;
   localStorage.setItem('bank',JSON.stringify(Player.bank));
 }
 
