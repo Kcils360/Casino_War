@@ -146,3 +146,62 @@ div {
 .flip-container {
   margin: 0 auto;
 }
+
+.links_Gregory {
+  text-align: center;
+  list-style: none;
+  width: 360px;
+  height: 55px;
+  margin-top: 80px;
+  background-color: #E6FFB0;
+}
+
+.links_Gregory li {
+  display: inline-block;
+  height: 52px;
+  width: 52px;
+}
+
+.links_Gregory img {
+  margin-top: -28px;
+  height: 50px;
+  width: 50px;
+}
+
+.links_Han {
+  text-align: center;
+  list-style: none;
+  width: 360px;
+  height: 55px;
+  margin-top: 58px;
+  background-color: #E6FFB0;
+}
+
+.links_Han li {
+  display: inline-block;
+}
+
+.links_Han img {
+  margin-top: -28px;
+  height: 50px;
+  width: 50px;
+}
+
+.links_Duane {
+  text-align: center;
+  list-style: none;
+  width: 360px;
+  height: 55px;
+  margin-top: 35px;
+  background-color: #E6FFB0;
+}
+
+.links_Duane li {
+  display: inline-block;
+}
+
+.links_Duane img {
+  margin-top: -28px;
+  height: 50px;
+  width: 50px;
+}
