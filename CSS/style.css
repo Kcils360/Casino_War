@@ -128,7 +128,8 @@ label {
   margin-left: 5%;
 }
 
-#bank {
+.currentBank {
+  list-style: none;
   font-family: Times, serif;
   font-weight: lighter;
   font-size: 65px;
@@ -136,6 +137,10 @@ label {
   position: relative;
   margin-left: 5%;
   margin-top: 0px;
+}
+
+.currentBank li {
+  display: inline;  
 }
 
 #button {
