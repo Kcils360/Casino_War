@@ -11,7 +11,7 @@ Player.bid = [];
 Player.bank = 0;
 var cheapItem = ['tshirt','shirt','cloth','pen','waterbottle','wallet','sunglasses','glasses','shoe'];
 var valueItem = ['laptop','watch','ring','earing','iphone','macbook','phone','car','carkey'];
-var invalueItem = ['home','child','dog','son','daughter','life','wife','house','kid'];
+var invalueItem = ['home','child','dog','son','diamond ring','life','wife','house','kid'];
 var gambler;
 var dealerHand;
 var playerHand;
@@ -103,6 +103,7 @@ function addBet(e){
   }
 
   if(parseInt(chip) < 20){
+    resetInput();
     return alert('Minimum bet is $20!');
   }
 
@@ -262,7 +263,7 @@ function randomCard(){
 }
 
 function updateBank(){
-  document.getElementById('bank').innerHTML = '$' + Player.bank;
+  document.getElementById('bank').innerHTML = Player.bank;
   localStorage.setItem('bank',JSON.stringify(Player.bank));
 }
 
