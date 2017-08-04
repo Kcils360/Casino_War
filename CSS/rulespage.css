@@ -17,12 +17,12 @@ nav a {
   float: right;
   font-size: 30px;
   font-family: 'Limelight', cursive;
-  color: #180B05;
+  color: #E6FFB0;
   text-decoration: none;
 }
 
 a:hover {
-  color: #E6FFB0;
+  color: #9A0000;
 }
 
 a:active {
@@ -52,7 +52,7 @@ div {
   width: 300px;
   height: 300px;
   margin: 0px 3%;
-  color: #180B05;
+  color: #E6FFB0;
   font-size: 25px;
   vertical-align: middle;
 }
@@ -67,7 +67,6 @@ div {
 .howTo {
   width: 700px;
   height: 350px;
-
 }
 
 .howTo p {
@@ -76,7 +75,7 @@ div {
   border: 2px solid #9A0000;
   border-radius: 10px;
   padding: 10px;
-  background-color: rgba(24,11,5,.65);
+  background-color: rgba(24, 11, 5, .65);
   font-family: Garamond;
   font-size: 30px;
   color: #E6FFB0;
@@ -84,7 +83,8 @@ div {
 
 .bankList {
   font-size: 60px;
-  font-weight: 100;;
+  font-weight: 100;
+  ;
   margin: 0px;
   color: #B14B00;
 }
@@ -99,40 +99,6 @@ div {
 .bet h5 {
   margin-bottom: 17px;
   font-size: 80px;
-}
-
-.bet h6 {
-  margin: 0px;
-  font-size: 20px;
-  text-align: left;
-  padding-left: 63px;
-
-}
-
-.bet ul {
-  list-style: none;
-  padding-left: 0px;
-  padding-right: 30px;
-  margin-top: 25px;
-}
-
-.bet li {
-  display: inline;
-}
-
-.bet input {
-  font-size: 50px;
-  font-family: inherit;
-  width: 150px;
-  background-color: #E6FFB0;
-  color: #182803;
-  border-radius: 7px;
-  padding-left: 10px;
-}
-
-
-footer {
-  position: relative;
 }
 
 #play {
@@ -160,4 +126,13 @@ footer {
   background-color: #9A0000;
   color: #180B05;
   border-color: #B14B00;
+}
+
+#deckNum {
+  font-size: 20px;
+  width: 20%;
+  height: 15%;
+  margin-top: 2%;
+  background-color: #E6FFB0;
+  border: 2px solid #9A0000;
 }

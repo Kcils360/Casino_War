@@ -1,14 +1,19 @@
 'use strict';
 
-var userName = localStorage.gambler;
+var username = localStorage.gambler;
+
+if(localStorage.gambler.length < 1){
+  username = 'Guest';
+}else {
+  document.getElementById('username').textContent = username;
+}
+
 
 function saveBet(e){
   e.preventDefault();
-  var betAmount = document.getElementById('betAmount').value;
-  localStorage.setItem('bank', parseInt(betAmount));
+  var deckNum = document.getElementById('deckNum').value;
+  localStorage.setItem('deckNum', parseInt(deckNum));
 }
-document.getElementById('play').addEventListener('click', saveBet);
 
-if(userName.length > 0){
-  document.getElementById('username').textContent = userName;
-}
+
+document.getElementById('play').addEventListener('click', saveBet);
