@@ -11,7 +11,6 @@ Player.bid = [];
 Player.bank = 0;
 var cheapItem = ['tshirt','shirt','cloth','pen','waterbottle','wallet','sunglasses','glasses','shoe'];
 var valueItem = ['laptop','watch','ring','earing','iphone','macbook','phone','car','carkey'];
-var invalueItem = ['home','child','dog','son','diamond ring','life','wife','house','kid'];
 var gambler;
 var dealerHand;
 var playerHand;
@@ -241,9 +240,6 @@ function pawnShop(){
     } else if(pawnItem == cheapItem[p]){
       Player.bank = randomInt(2,5);
       return alert('After estimating your ' + pawnItem + ' is worth $' + Player.bank);
-    } else if(pawnItem == invalueItem[p]){
-      Player.bank = randomInt(3000,10000);
-      return alert(pawnItem + '!? Okay, here is $' + Player.bank);
     }
   }
   Player.bank = randomInt(5,10);
